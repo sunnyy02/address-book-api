@@ -1,4 +1,6 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete } from '@nestjs/common';
+import { ApiParam } from '@nestjs/swagger';
+import { AddressIdParam } from './address-id-param';
 import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
@@ -8,8 +10,8 @@ export class AddressController {
     constructor(private readonly addressService: AddressService) {}
 
     @Get(':id')
-    getById(@Param('id', ParseIntPipe) id: number) {
-        return this.addressService.getById(id);
+    getById(@Param() idParam: AddressIdParam) {
+        return this.addressService.getById(idParam.id);
     }
 
     @Post()
@@ -18,12 +20,12 @@ export class AddressController {
     }
 
     @Put(':id')
-    update(@Param('id', ParseIntPipe) id: number, @Body() address: AddressDto) {
-        return this.addressService.update(id, address);
+    update(@Param() idParam: AddressIdParam, @Body() address: AddressDto) {
+        return this.addressService.update(idParam.id, address);
     }
 
     @Delete(':id')
-    deleteById(@Param('id', ParseIntPipe) id: number) {
-        return this.addressService.delete(id);
+    deleteById(@Param() idParam: AddressIdParam) {
+        return this.addressService.delete(idParam.id);
     }
 }

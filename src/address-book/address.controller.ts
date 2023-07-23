@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, ParseArrayPipe } from '@nestjs/common';
 import { ApiParam } from '@nestjs/swagger';
 import { AddressIdParam } from './address-id-param';
 import { AddressDto } from './address.dto';
@@ -17,6 +17,14 @@ export class AddressController {
     @Post()
     create(@Body() address: CreateAddressDto) {
         return this.addressService.create(address);
+    }
+
+    @Post()
+    createAddressByBatch(
+    @Body(new ParseArrayPipe({ items: CreateAddressDto }))
+    createAddressDtos: CreateAddressDto[],
+    ) {
+        // implement the create a batch of addresses
     }
 
     @Put(':id')

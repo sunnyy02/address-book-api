@@ -8,7 +8,7 @@ declare const module: any;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors();
-  
+
   const options = new DocumentBuilder()
     .setTitle('Address Book API')
     .setDescription('API description')
@@ -17,8 +17,19 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
 
-  app.useGlobalPipes(new ValidationPipe());
-  
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      forbidUnknownValues: true,
+      disableErrorMessages: false,
+      validationError: {
+        value: false,
+      },
+      transform: true
+    }),
+  );
+
   await app.listen(3000);
 
   if (module.hot) {

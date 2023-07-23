@@ -1,8 +1,10 @@
-import { ApiParam, ApiProperty } from '@nestjs/swagger';
-import { IsNumberString } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
+import { IsNumber, IsNumberString } from 'class-validator';
 
 export class AddressIdParam {
-  @IsNumberString()
+  @Type(() => Number)
+  @IsNumber()
   @ApiProperty()
   id: number;
 }

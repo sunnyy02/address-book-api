@@ -1,7 +1,5 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, ParseArrayPipe, UsePipes } from '@nestjs/common';
-import { ApiParam } from '@nestjs/swagger';
 import { AddressIdParam } from './address-id-param';
-import { AddressValidationPipe } from './address-validation.pipe';
 import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
@@ -16,7 +14,6 @@ export class AddressController {
     }
 
     @Post()
-    @UsePipes(AddressValidationPipe)
     create(@Body() address: CreateAddressDto) {
         return this.addressService.create(address);
     }

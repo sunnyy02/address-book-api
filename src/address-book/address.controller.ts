@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, ParseArrayPipe, UsePipes } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, ParseArrayPipe, UsePipes, Query } from '@nestjs/common';
 import { ApiParam } from '@nestjs/swagger';
 import { AddressIdParam } from './address-id-param';
 import { AddressValidationPipe } from './address-validation.pipe';
@@ -11,7 +11,13 @@ export class AddressController {
     constructor(private readonly addressService: AddressService) {}
 
     @Get(':id')
-    getById(@Param() idParam: AddressIdParam) {
+    getById(@Param('id', ParseIntPipe) id: number) {
+        return this.addressService.getById(id);
+    }
+
+    // address?id=1
+    @Get()
+    search(@Query() idParam: AddressIdParam) {
         return this.addressService.getById(idParam.id);
     }
 

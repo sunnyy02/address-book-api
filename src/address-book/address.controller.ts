@@ -1,18 +1,25 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, ParseArrayPipe, UsePipes, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, ParseArrayPipe, UsePipes, Query, UseFilters, NotFoundException } from '@nestjs/common';
 import { ApiParam } from '@nestjs/swagger';
 import { AddressIdParam } from './address-id-param';
+import { HttpExceptionFilter } from '../http-exception.filter';
 import { AddressValidationPipe } from './address-validation.pipe';
 import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
 
 @Controller('address')
+@UseFilters(new HttpExceptionFilter())
 export class AddressController {
     constructor(private readonly addressService: AddressService) {}
 
     @Get(':id')
+    //@UseFilters(HttpExceptionFilter)
     getById(@Param('id', ParseIntPipe) id: number) {
-        return this.addressService.getById(id);
+        const address = this.addressService.getById(id);
+        if(!address){
+            throw new NotFoundException('Address not found');
+        }
+        return address;
     }
 
     // address?id=1

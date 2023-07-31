@@ -6,13 +6,11 @@ import { AddressDto } from "./address.dto";
 export class AddressValidationPipe implements PipeTransform<AddressDto> {
     statePostCodeMap: Record<string, string> = {
         NSW: "2",
-        ACT: "2",
         VIC: "3",
         QLD : "4",
         SA: "5",
         WA: "6",
         TAS: "7",
-        NT: "0"
     }
     async transform(value: AddressDto, metaData: ArgumentMetadata) {
         if(!this.statePostCodeMap[value.state.toUpperCase()]){

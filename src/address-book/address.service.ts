@@ -18,6 +18,10 @@ export class AddressService {
     return this.addressDataStore.find((t) => t.id === id);
   }
 
+  getByAddressLine(addressLine: string) {
+    return this.addressDataStore.find((t) => t.addressLine === addressLine);
+  }
+
   create(address: CreateAddressDto) {
     const id =
       this.addressDataStore.length === 0

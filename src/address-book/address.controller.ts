@@ -6,6 +6,7 @@ import { AddressValidationPipe } from './address-validation.pipe';
 import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
+import { DuplicateAddressException } from './duplicate-address-exception';
 
 @Controller('address')
 @UseFilters(new HttpExceptionFilter())
@@ -31,6 +32,10 @@ export class AddressController {
     @Post()
     @UsePipes(AddressValidationPipe)
     create(@Body() address: CreateAddressDto) {
+        var existingAddress = this.addressService.getByAddressLine(address.addressLine);
+        if (existingAddress) {
+            throw new DuplicateAddressException(address.addressLine);
+          }
         return this.addressService.create(address);
     }
 

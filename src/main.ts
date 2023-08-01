@@ -3,11 +3,17 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { HttpAddressExceptionFilter } from './http-exception.filter';
+import { CustomLogger } from './logger/custom-logger';
 
 declare const module: any;
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    logger: ['error', 'warn', 'debug', 'log'],
+    bufferLogs: true
+  });
+  
+  app.useLogger(app.get(CustomLogger));
   app.enableCors();
 
   const options = new DocumentBuilder()

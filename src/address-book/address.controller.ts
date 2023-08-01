@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, ParseArrayPipe, UsePipes, Query, UseFilters, NotFoundException } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, ParseArrayPipe, UsePipes, Query, UseFilters, NotFoundException, Logger } from '@nestjs/common';
 import { ApiParam } from '@nestjs/swagger';
 import { AddressIdParam } from './address-id-param';
 import { HttpAddressExceptionFilter} from '../http-exception.filter';
@@ -7,11 +7,17 @@ import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
 import { DuplicateAddressException } from './duplicate-address-exception';
+import { CustomLogger } from 'src/logger/custom-logger';
 
 @Controller('address')
 @UseFilters(new HttpAddressExceptionFilter())
 export class AddressController {
-    constructor(private readonly addressService: AddressService) {}
+    //private logger = new Logger('AddressController');
+    private logger;
+    constructor(private readonly addressService: AddressService, private customLogger: CustomLogger) {
+        this.customLogger.log('AddressController initialized!');
+        this.logger = customLogger;
+    }
 
     @Get(':id')
     //@UseFilters(HttpExceptionFilter)
@@ -34,6 +40,7 @@ export class AddressController {
     create(@Body() address: CreateAddressDto) {
         var existingAddress = this.addressService.getByAddressLine(address.addressLine);
         if (existingAddress) {
+            this.logger.warn('duplicated address');
             throw new DuplicateAddressException(address.addressLine);
           }
         return this.addressService.create(address);

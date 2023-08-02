@@ -13,10 +13,8 @@ import { CustomLogger } from 'src/logger/custom-logger';
 @UseFilters(new HttpAddressExceptionFilter())
 export class AddressController {
     //private logger = new Logger('AddressController');
-    private logger;
     constructor(private readonly addressService: AddressService, private customLogger: CustomLogger) {
         this.customLogger.log('AddressController initialized!');
-        this.logger = customLogger;
     }
 
     @Get(':id')
@@ -40,7 +38,7 @@ export class AddressController {
     create(@Body() address: CreateAddressDto) {
         var existingAddress = this.addressService.getByAddressLine(address.addressLine);
         if (existingAddress) {
-            this.logger.warn('duplicated address');
+            this.customLogger.warn('duplicated address');
             throw new DuplicateAddressException(address.addressLine);
           }
         return this.addressService.create(address);

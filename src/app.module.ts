@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { AddressBookModule } from './address-book/address-book.module';
 import { LoggerModule } from './logger/logger.module';
 import { LoggerMiddleware } from './logger.middleware';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
-  imports: [AddressBookModule, LoggerModule],
+  imports: [AddressBookModule, LoggerModule, DatabaseModule],
   controllers: [AppController],
   providers: [AppService],
 })

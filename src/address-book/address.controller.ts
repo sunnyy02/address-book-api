@@ -7,7 +7,7 @@ import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
 import { DuplicateAddressException } from './duplicate-address-exception';
-import { CustomLogger } from 'src/logger/custom-logger';
+import { CustomLogger } from '../logger/custom-logger';
 
 @Controller('address')
 @UseFilters(new HttpAddressExceptionFilter())

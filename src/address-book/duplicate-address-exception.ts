@@ -1,5 +1,5 @@
 import { HttpStatus } from '@nestjs/common';
-import { BaseAddressException } from 'src/base-address-exception';
+import { BaseAddressException } from '../base-address-exception';
 
 export class DuplicateAddressException extends BaseAddressException {
   constructor(addressLine: string) {

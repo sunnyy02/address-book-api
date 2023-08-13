@@ -30,28 +30,22 @@ export class AddressService {
     return this.addressDataStore.find((t) => t.addressLine === addressLine);
   }
 
-  create(address: CreateAddressDto) {
-    const id =
-      this.addressDataStore.length === 0
-        ? 0
-        : Math.max(...this.addressDataStore.map((t) => t.id));
-    const newAddress = { ...address, id: id + 1, createdDate: new Date() };
-    //this.addressDataStore.push(newAddress);
+ async create(address: CreateAddressDto) {
     const entity = new AddressEntity();
     entity.address_line = address.addressLine;
     entity.state = address.state;
     entity.post_code = address.postCode.toString();
-    
-    this.addressRepository.save(entity);
+
+    await this.addressRepository.save(entity);
   }
-  
+
   update(id: number, address: AddressDto): void {
-    const index = this.addressDataStore.findIndex( x => x.id === id);
+    const index = this.addressDataStore.findIndex((x) => x.id === id);
     this.addressDataStore[index] = address;
   }
 
   delete(id: number) {
-    const index = this.addressDataStore.findIndex( x => x.id === id);
+    const index = this.addressDataStore.findIndex((x) => x.id === id);
     this.addressDataStore.splice(index, 1);
   }
 }

@@ -35,17 +35,17 @@ export class AddressController {
 
     @Post()
     @UsePipes(AddressValidationPipe)
-    create(@Body() address: CreateAddressDto) {
+    async create(@Body() address: CreateAddressDto) {
         var existingAddress = this.addressService.getByAddressLine(address.addressLine);
         if (existingAddress) {
             this.customLogger.warn('duplicated address');
             throw new DuplicateAddressException(address.addressLine);
           }
-        return this.addressService.create(address);
+        return await this.addressService.create(address);
     }
 
     @Post()
-    createAddressByBatch(
+    async createAddressByBatch(
     @Body(new ParseArrayPipe({ items: CreateAddressDto }))
     createAddressDtos: CreateAddressDto[],
     ) {

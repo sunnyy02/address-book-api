@@ -1,9 +1,9 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AddressDto } from './address.dto';
 import { AddressEntity } from './address.entity';
 import { CreateAddressDto } from './create-address.dto';
+import { UpdateAddressDto } from './update-address.dto';
 
 @Injectable()
 export class AddressService {
@@ -12,22 +12,18 @@ export class AddressService {
     private addressRepository: Repository<AddressEntity>,
   ) {}
 
-  private addressDataStore: AddressDto[] = [
-    {
-      id: 1,
-      addressLine: '123 Queen street',
-      postCode: 4000,
-      state: 'QLD',
-      createdDate: new Date(),
-    },
-  ];
-
-  getById(id: number) {
-    return this.addressDataStore.find((t) => t.id === id);
+  async getById(id: number) {
+    return await this.addressRepository.findOne({
+      where: {id,}
+    });
   }
 
-  getByAddressLine(addressLine: string) {
-    return this.addressDataStore.find((t) => t.addressLine === addressLine);
+  async getByAddressLine(addressLine: string) {
+    return await this.addressRepository.find(
+      {
+        where: {address_line: addressLine}
+      }
+    )
   }
 
  async create(address: CreateAddressDto) {
@@ -39,13 +35,16 @@ export class AddressService {
     await this.addressRepository.save(entity);
   }
 
-  update(id: number, address: AddressDto): void {
-    const index = this.addressDataStore.findIndex((x) => x.id === id);
-    this.addressDataStore[index] = address;
+  async update(id: number, address: UpdateAddressDto) {
+    const existingEntity = await this.getById(id);
+    existingEntity.address_line = address.addressLine;
+    existingEntity.post_code = address.postCode.toString();
+    existingEntity.state = address.state;
+    console.log('existing:', existingEntity);
+    return this.addressRepository.save(existingEntity);
   }
 
-  delete(id: number) {
-    const index = this.addressDataStore.findIndex((x) => x.id === id);
-    this.addressDataStore.splice(index, 1);
+  async delete(id: number) {
+    return await this.addressRepository.delete(id);
   }
 }

@@ -15,7 +15,7 @@
             ],
             "autoAttachChildProcesses": true,
             "sourceMaps": true,
-            "envFile": "${workspaceFolder}/.env",
+            "envFile": "${workspaceFolder}/.env.dev",
             "cwd": "${workspaceRoot}",
             "console": "integratedTerminal",
         }

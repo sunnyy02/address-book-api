@@ -10,16 +10,34 @@ import { AddressBookModule } from './address-book/address-book.module';
 import { LoggerModule } from './logger/logger.module';
 import { LoggerMiddleware } from './logger.middleware';
 import { DatabaseModule } from './database/database.module';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { AddressEntity } from './address-book/address.entity';
+
+const configService = new ConfigService();
 
 @Module({
   imports: [
     AddressBookModule,
-    LoggerModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV}`,
     }),
+    TypeOrmModule.forRoot(
+      {
+        type: 'mysql',
+        host: configService.get('DATABASE_HOST'),
+        port: configService.get('DATABASE_PORT'),
+        username: configService.get('DATABASE_USER'),
+        password: configService.get('DATABASE_PASSWORD'),
+        database: configService.get('DATABASE_NAME'),
+       // entities: [join(__dirname, '**', '*.entity.{ts,js}')],
+        entities: [AddressEntity],
+        synchronize: configService.get('SYNCHRONIZE'),
+      }
+    ),
+    LoggerModule,
+
   ],
   controllers: [AppController],
   providers: [AppService],

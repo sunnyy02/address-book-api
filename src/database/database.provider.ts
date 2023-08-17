@@ -7,7 +7,7 @@ const configService = new ConfigService();
 
 export const databaseProvider = [
   {
-    provide: 'DATA_SOURCE',
+    provide: DataSource,
     useFactory: async () => {
       const dataSource = new DataSource({
         type: 'mysql',

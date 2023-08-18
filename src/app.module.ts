@@ -9,17 +9,15 @@ import { AppService } from './app.service';
 import { AddressBookModule } from './address-book/address-book.module';
 import { LoggerModule } from './logger/logger.module';
 import { LoggerMiddleware } from './logger.middleware';
-import { DatabaseModule } from './database/database.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AddressEntity } from './address-book/address.entity';
 
 const configService = new ConfigService();
 
 @Module({
   imports: [
     AddressBookModule,
-    ConfigModule.forRoot({
+        ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV}`,
     }),
@@ -31,8 +29,8 @@ const configService = new ConfigService();
         username: configService.get('DATABASE_USER'),
         password: configService.get('DATABASE_PASSWORD'),
         database: configService.get('DATABASE_NAME'),
-       // entities: [join(__dirname, '**', '*.entity.{ts,js}')],
-        entities: [AddressEntity],
+        entities: [ `${__dirname}/**/*.entity.{ts,js}`],
+        autoLoadEntities: true,
         synchronize: configService.get('SYNCHRONIZE'),
       }
     ),

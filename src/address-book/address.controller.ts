@@ -27,8 +27,8 @@ export class AddressController {
     }
 
     @Get()
-    async search(@Query() idParam: AddressIdParam) {
-        return await this.addressService.getById(idParam.id);
+    async getAll() {
+        return await this.addressService.getAll();
     }
 
     @Post()

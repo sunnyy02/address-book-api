@@ -17,6 +17,16 @@ export class AddressService {
     private dataSource: DataSource
   ) {}
 
+  async getAll() {
+    return await this.addressRepository
+        .createQueryBuilder('address')
+        .select(['address.address_line', 'address.post_code', 'address.state'])
+        .orderBy('address.state', 'ASC')
+        .addOrderBy('address.post_code', 'ASC')
+        .limit(100)
+        .getMany();
+  }
+
   async getById(id: number) {
     //// use repository
     // return await this.addressRepository
@@ -33,8 +43,13 @@ export class AddressService {
     //             .getOne();
 
     // use entity manager
+    const sql = this.entityManager.createQueryBuilder(AddressEntity, 'address')
+    .where('address.id=:id', {id})
+    .getSql();
+    console.log('sql:', sql);
     return await this.entityManager.createQueryBuilder(AddressEntity, 'address')
     .where('address.id=:id', {id})
+    .printSql()
     .getOne();
   }
 

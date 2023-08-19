@@ -1,0 +1,896 @@
+Thu, 17 Aug 2023 09:43:26 GMT [log]:AddressController initialized!
+Thu, 17 Aug 2023 09:43:27 GMT [log]:AppModule dependencies initialized
+Thu, 17 Aug 2023 09:43:27 GMT [log]:ConfigModule dependencies initialized
+Thu, 17 Aug 2023 09:43:27 GMT [log]:DatabaseModule dependencies initialized
+Thu, 17 Aug 2023 09:43:27 GMT [log]:AddressBookModule dependencies initialized
+Thu, 17 Aug 2023 09:43:27 GMT [log]:AppController {/}:
+Thu, 17 Aug 2023 09:43:27 GMT [log]:Mapped {/, GET} route
+Thu, 17 Aug 2023 09:43:27 GMT [log]:Mapped {/address, GET} route
+Thu, 17 Aug 2023 09:43:27 GMT [log]:ConfigHostModule dependencies initialized
+Thu, 17 Aug 2023 09:43:27 GMT [log]:AddressController {/address}:
+Thu, 17 Aug 2023 09:43:27 GMT [log]:Mapped {/address, POST} route
+Thu, 17 Aug 2023 09:43:27 GMT [log]:Mapped {/address/:id, PUT} route
+Thu, 17 Aug 2023 09:43:27 GMT [log]:Mapped {/address/:id, DELETE} route
+Thu, 17 Aug 2023 09:43:27 GMT [log]:Nest application successfully started
+Thu, 17 Aug 2023 09:43:27 GMT [log]:Mapped {/address/:id, GET} route
+Thu, 17 Aug 2023 09:43:27 GMT [log]:Starting Nest application...
+Thu, 17 Aug 2023 09:43:27 GMT [log]:LoggerModule dependencies initialized
+Thu, 17 Aug 2023 09:44:08 GMT [log]:req: {
+      headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"3e15c810-4f1e-4151-a42b-1af336670adb","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"85"},
+      body: {"addressLine":"100 Queen street","postCode":"4000","state":"QLD"},
+      originalUrl: /address,
+    }
+Thu, 17 Aug 2023 09:44:08 GMT [log]:response:/address status code:201 length:undefined
+Thu, 17 Aug 2023 09:46:23 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"4c3cee10-f4c5-45c2-97f2-d39fbcb89a68","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Thu, 17 Aug 2023 09:46:23 GMT [log]:response:/address/1 status code:200 length:159
+Thu, 17 Aug 2023 09:50:00 GMT [log]:AddressController initialized!
+Thu, 17 Aug 2023 09:50:00 GMT [log]:Starting Nest application...
+Thu, 17 Aug 2023 09:50:00 GMT [log]:ConfigModule dependencies initialized
+Thu, 17 Aug 2023 09:50:00 GMT [log]:DatabaseModule dependencies initialized
+Thu, 17 Aug 2023 09:50:00 GMT [log]:AddressBookModule dependencies initialized
+Thu, 17 Aug 2023 09:50:00 GMT [log]:AppController {/}:
+Thu, 17 Aug 2023 09:50:00 GMT [log]:LoggerModule dependencies initialized
+Thu, 17 Aug 2023 09:50:00 GMT [log]:AddressController {/address}:
+Thu, 17 Aug 2023 09:50:00 GMT [log]:Mapped {/address/:id, GET} route
+Thu, 17 Aug 2023 09:50:00 GMT [log]:Mapped {/, GET} route
+Thu, 17 Aug 2023 09:50:00 GMT [log]:AppModule dependencies initialized
+Thu, 17 Aug 2023 09:50:00 GMT [log]:Mapped {/address, GET} route
+Thu, 17 Aug 2023 09:50:00 GMT [log]:Mapped {/address/:id, DELETE} route
+Thu, 17 Aug 2023 09:50:00 GMT [log]:Nest application successfully started
+Thu, 17 Aug 2023 09:50:00 GMT [log]:Mapped {/address/:id, PUT} route
+Thu, 17 Aug 2023 09:50:00 GMT [log]:ConfigHostModule dependencies initialized
+Thu, 17 Aug 2023 09:50:00 GMT [log]:Mapped {/address, POST} route
+Thu, 17 Aug 2023 09:50:47 GMT [log]:AddressController initialized!
+Thu, 17 Aug 2023 09:50:47 GMT [log]:Starting Nest application...
+Thu, 17 Aug 2023 09:50:47 GMT [log]:ConfigModule dependencies initialized
+Thu, 17 Aug 2023 09:50:47 GMT [log]:DatabaseModule dependencies initialized
+Thu, 17 Aug 2023 09:50:47 GMT [log]:AddressBookModule dependencies initialized
+Thu, 17 Aug 2023 09:50:47 GMT [log]:AppController {/}:
+Thu, 17 Aug 2023 09:50:47 GMT [log]:Mapped {/, GET} route
+Thu, 17 Aug 2023 09:50:47 GMT [log]:AddressController {/address}:
+Thu, 17 Aug 2023 09:50:47 GMT [log]:Mapped {/address/:id, GET} route
+Thu, 17 Aug 2023 09:50:47 GMT [log]:Mapped {/address, GET} route
+Thu, 17 Aug 2023 09:50:47 GMT [log]:Mapped {/address, POST} route
+Thu, 17 Aug 2023 09:50:47 GMT [log]:Mapped {/address/:id, PUT} route
+Thu, 17 Aug 2023 09:50:47 GMT [log]:Mapped {/address/:id, DELETE} route
+Thu, 17 Aug 2023 09:50:47 GMT [log]:Nest application successfully started
+Thu, 17 Aug 2023 09:50:47 GMT [log]:LoggerModule dependencies initialized
+Thu, 17 Aug 2023 09:50:47 GMT [log]:ConfigHostModule dependencies initialized
+Thu, 17 Aug 2023 09:50:47 GMT [log]:AppModule dependencies initialized
+Thu, 17 Aug 2023 09:51:42 GMT [log]:AddressController initialized!
+Thu, 17 Aug 2023 09:51:42 GMT [log]:AppModule dependencies initialized
+Thu, 17 Aug 2023 09:51:42 GMT [log]:ConfigModule dependencies initialized
+Thu, 17 Aug 2023 09:51:42 GMT [log]:DatabaseModule dependencies initialized
+Thu, 17 Aug 2023 09:51:42 GMT [log]:AddressBookModule dependencies initialized
+Thu, 17 Aug 2023 09:51:42 GMT [log]:AppController {/}:
+Thu, 17 Aug 2023 09:51:42 GMT [log]:LoggerModule dependencies initialized
+Thu, 17 Aug 2023 09:51:42 GMT [log]:Starting Nest application...
+Thu, 17 Aug 2023 09:51:42 GMT [log]:Mapped {/address/:id, GET} route
+Thu, 17 Aug 2023 09:51:42 GMT [log]:Mapped {/address, GET} route
+Thu, 17 Aug 2023 09:51:42 GMT [log]:Mapped {/address, POST} route
+Thu, 17 Aug 2023 09:51:42 GMT [log]:Mapped {/address/:id, PUT} route
+Thu, 17 Aug 2023 09:51:42 GMT [log]:Mapped {/address/:id, DELETE} route
+Thu, 17 Aug 2023 09:51:42 GMT [log]:Nest application successfully started
+Thu, 17 Aug 2023 09:51:42 GMT [log]:AddressController {/address}:
+Thu, 17 Aug 2023 09:51:42 GMT [log]:ConfigHostModule dependencies initialized
+Thu, 17 Aug 2023 09:51:42 GMT [log]:Mapped {/, GET} route
+Thu, 17 Aug 2023 09:52:47 GMT [log]:AddressController initialized!
+Thu, 17 Aug 2023 09:52:47 GMT [log]:LoggerModule dependencies initialized
+Thu, 17 Aug 2023 09:52:47 GMT [log]:ConfigModule dependencies initialized
+Thu, 17 Aug 2023 09:52:47 GMT [log]:DatabaseModule dependencies initialized
+Thu, 17 Aug 2023 09:52:47 GMT [log]:AppController {/}:
+Thu, 17 Aug 2023 09:52:47 GMT [log]:Starting Nest application...
+Thu, 17 Aug 2023 09:52:47 GMT [log]:AppModule dependencies initialized
+Thu, 17 Aug 2023 09:52:47 GMT [log]:AddressBookModule dependencies initialized
+Thu, 17 Aug 2023 09:52:47 GMT [log]:Mapped {/address/:id, GET} route
+Thu, 17 Aug 2023 09:52:47 GMT [log]:Mapped {/address, GET} route
+Thu, 17 Aug 2023 09:52:47 GMT [log]:Mapped {/address, POST} route
+Thu, 17 Aug 2023 09:52:47 GMT [log]:Mapped {/address/:id, PUT} route
+Thu, 17 Aug 2023 09:52:47 GMT [log]:Mapped {/address/:id, DELETE} route
+Thu, 17 Aug 2023 09:52:47 GMT [log]:Nest application successfully started
+Thu, 17 Aug 2023 09:52:47 GMT [log]:ConfigHostModule dependencies initialized
+Thu, 17 Aug 2023 09:52:47 GMT [log]:Mapped {/, GET} route
+Thu, 17 Aug 2023 09:52:47 GMT [log]:AddressController {/address}:
+Thu, 17 Aug 2023 10:29:09 GMT [log]:AddressController initialized!
+Thu, 17 Aug 2023 10:29:09 GMT [log]:LoggerModule dependencies initialized
+Thu, 17 Aug 2023 10:29:09 GMT [log]:ConfigHostModule dependencies initialized
+Thu, 17 Aug 2023 10:29:09 GMT [log]:AppModule dependencies initialized
+Thu, 17 Aug 2023 10:29:09 GMT [log]:ConfigModule dependencies initialized
+Thu, 17 Aug 2023 10:29:09 GMT [log]:DatabaseModule dependencies initialized
+Thu, 17 Aug 2023 10:29:09 GMT [log]:AddressBookModule dependencies initialized
+Thu, 17 Aug 2023 10:29:09 GMT [log]:AppController {/}:
+Thu, 17 Aug 2023 10:29:09 GMT [log]:Mapped {/, GET} route
+Thu, 17 Aug 2023 10:29:09 GMT [log]:AddressController {/address}:
+Thu, 17 Aug 2023 10:29:09 GMT [log]:Mapped {/address/:id, GET} route
+Thu, 17 Aug 2023 10:29:09 GMT [log]:Mapped {/address, GET} route
+Thu, 17 Aug 2023 10:29:09 GMT [log]:Mapped {/address, POST} route
+Thu, 17 Aug 2023 10:29:09 GMT [log]:Mapped {/address/:id, PUT} route
+Thu, 17 Aug 2023 10:29:09 GMT [log]:Mapped {/address/:id, DELETE} route
+Thu, 17 Aug 2023 10:29:09 GMT [log]:Nest application successfully started
+Thu, 17 Aug 2023 10:29:09 GMT [log]:Starting Nest application...
+Thu, 17 Aug 2023 11:08:17 GMT [log]:AddressController initialized!
+Thu, 17 Aug 2023 11:08:17 GMT [log]:Starting Nest application...
+Thu, 17 Aug 2023 11:08:17 GMT [log]:AppModule dependencies initialized
+Thu, 17 Aug 2023 11:08:17 GMT [log]:ConfigModule dependencies initialized
+Thu, 17 Aug 2023 11:08:17 GMT [log]:DatabaseModule dependencies initialized
+Thu, 17 Aug 2023 11:08:17 GMT [log]:TypeOrmCoreModule dependencies initialized
+Thu, 17 Aug 2023 11:08:17 GMT [log]:LoggerModule dependencies initialized
+Thu, 17 Aug 2023 11:08:17 GMT [log]:AddressBookModule dependencies initialized
+Thu, 17 Aug 2023 11:08:17 GMT [log]:AppController {/}:
+Thu, 17 Aug 2023 11:08:17 GMT [log]:Mapped {/, GET} route
+Thu, 17 Aug 2023 11:08:17 GMT [log]:AddressController {/address}:
+Thu, 17 Aug 2023 11:08:17 GMT [log]:Mapped {/address/:id, GET} route
+Thu, 17 Aug 2023 11:08:17 GMT [log]:Mapped {/address, GET} route
+Thu, 17 Aug 2023 11:08:17 GMT [log]:Mapped {/address, POST} route
+Thu, 17 Aug 2023 11:08:17 GMT [log]:Mapped {/address/:id, PUT} route
+Thu, 17 Aug 2023 11:08:17 GMT [log]:TypeOrmModule dependencies initialized
+Thu, 17 Aug 2023 11:08:17 GMT [log]:Mapped {/address/:id, DELETE} route
+Thu, 17 Aug 2023 11:08:17 GMT [log]:ConfigHostModule dependencies initialized
+Thu, 17 Aug 2023 11:08:17 GMT [log]:TypeOrmModule dependencies initialized
+Thu, 17 Aug 2023 11:08:17 GMT [log]:Nest application successfully started
+Thu, 17 Aug 2023 11:08:22 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"0d634596-f8db-4c08-a19d-122bf3af5dbc","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Thu, 17 Aug 2023 11:08:22 GMT [log]:response:/address/1 status code:200 length:159
+Thu, 17 Aug 2023 11:09:18 GMT [log]:AddressController initialized!
+Thu, 17 Aug 2023 11:09:18 GMT [log]:Starting Nest application...
+Thu, 17 Aug 2023 11:09:18 GMT [log]:AppModule dependencies initialized
+Thu, 17 Aug 2023 11:09:18 GMT [log]:ConfigModule dependencies initialized
+Thu, 17 Aug 2023 11:09:18 GMT [log]:DatabaseModule dependencies initialized
+Thu, 17 Aug 2023 11:09:18 GMT [log]:TypeOrmCoreModule dependencies initialized
+Thu, 17 Aug 2023 11:09:18 GMT [log]:TypeOrmModule dependencies initialized
+Thu, 17 Aug 2023 11:09:18 GMT [log]:AddressBookModule dependencies initialized
+Thu, 17 Aug 2023 11:09:18 GMT [log]:TypeOrmModule dependencies initialized
+Thu, 17 Aug 2023 11:09:18 GMT [log]:LoggerModule dependencies initialized
+Thu, 17 Aug 2023 11:09:18 GMT [log]:ConfigHostModule dependencies initialized
+Thu, 17 Aug 2023 11:09:18 GMT [log]:AppController {/}:
+Thu, 17 Aug 2023 11:09:18 GMT [log]:Mapped {/, GET} route
+Thu, 17 Aug 2023 11:09:18 GMT [log]:AddressController {/address}:
+Thu, 17 Aug 2023 11:09:18 GMT [log]:Mapped {/address/:id, GET} route
+Thu, 17 Aug 2023 11:09:18 GMT [log]:Mapped {/address, POST} route
+Thu, 17 Aug 2023 11:09:18 GMT [log]:Nest application successfully started
+Thu, 17 Aug 2023 11:09:18 GMT [log]:Mapped {/address/:id, PUT} route
+Thu, 17 Aug 2023 11:09:18 GMT [log]:Mapped {/address, GET} route
+Thu, 17 Aug 2023 11:09:18 GMT [log]:Mapped {/address/:id, DELETE} route
+Thu, 17 Aug 2023 11:10:35 GMT [log]:AddressController initialized!
+Thu, 17 Aug 2023 11:10:35 GMT [log]:Starting Nest application...
+Thu, 17 Aug 2023 11:10:35 GMT [log]:LoggerModule dependencies initialized
+Thu, 17 Aug 2023 11:10:35 GMT [log]:ConfigHostModule dependencies initialized
+Thu, 17 Aug 2023 11:10:35 GMT [log]:AppModule dependencies initialized
+Thu, 17 Aug 2023 11:10:35 GMT [log]:ConfigModule dependencies initialized
+Thu, 17 Aug 2023 11:10:35 GMT [log]:TypeOrmCoreModule dependencies initialized
+Thu, 17 Aug 2023 11:10:35 GMT [log]:DatabaseModule dependencies initialized
+Thu, 17 Aug 2023 11:10:35 GMT [log]:AddressBookModule dependencies initialized
+Thu, 17 Aug 2023 11:10:35 GMT [log]:Mapped {/, GET} route
+Thu, 17 Aug 2023 11:10:35 GMT [log]:AddressController {/address}:
+Thu, 17 Aug 2023 11:10:35 GMT [log]:Mapped {/address/:id, GET} route
+Thu, 17 Aug 2023 11:10:35 GMT [log]:Mapped {/address, GET} route
+Thu, 17 Aug 2023 11:10:35 GMT [log]:Mapped {/address, POST} route
+Thu, 17 Aug 2023 11:10:35 GMT [log]:Mapped {/address/:id, DELETE} route
+Thu, 17 Aug 2023 11:10:35 GMT [log]:Mapped {/address/:id, PUT} route
+Thu, 17 Aug 2023 11:10:35 GMT [log]:Nest application successfully started
+Thu, 17 Aug 2023 11:10:35 GMT [log]:TypeOrmModule dependencies initialized
+Thu, 17 Aug 2023 11:10:35 GMT [log]:TypeOrmModule dependencies initialized
+Thu, 17 Aug 2023 11:10:35 GMT [log]:AppController {/}:
+Thu, 17 Aug 2023 11:10:39 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"05d70825-d425-49ff-b279-68d8419a99e5","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Thu, 17 Aug 2023 11:10:39 GMT [log]:response:/address/1 status code:200 length:159
+Fri, 18 Aug 2023 12:00:22 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:00:22 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:00:22 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:00:22 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:00:22 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:00:22 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:00:22 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:00:22 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:00:22 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:00:22 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:00:22 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:00:22 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:00:22 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:00:22 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:00:22 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:00:22 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:00:22 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:00:22 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:00:22 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:00:22 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:00:33 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"949ade77-be4d-408f-a9d7-8955587dc427","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:00:33 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:00:33 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:05:44 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:05:44 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:05:44 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:05:44 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:05:44 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:05:44 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:05:44 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:05:44 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:05:44 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:05:44 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:05:44 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:05:44 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:05:44 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:05:44 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:05:44 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:05:44 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:05:44 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:05:44 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:05:44 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:05:44 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:05:54 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"7fbc4b0c-09bc-4bbb-96af-2babd4c1580c","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:05:54 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:05:54 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:09:17 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"a7811dd5-79d1-4bdd-ac8e-edf5bfe1698f","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:09:17 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:09:17 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:10:12 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"71940a95-e8c5-49ea-9a4b-2319a90620d2","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:10:12 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:10:12 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:10:22 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"dfccbc76-6a58-4458-97f1-d14cd1f0f315","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:10:22 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:10:22 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:11:49 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"7cdf2488-7706-4f2d-b914-f6a6659f05a2","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:11:49 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:11:49 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:12:29 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"12d138f1-3099-459c-8aab-f6f7598f4be0","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:12:29 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:12:29 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:19:00 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:19:00 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:19:00 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:19:00 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:19:00 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:19:00 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:19:00 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:19:00 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:19:00 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:19:00 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:19:00 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:19:00 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:19:00 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:19:00 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:19:00 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:19:00 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:19:00 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:19:00 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:19:00 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:19:00 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:19:08 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"13cc97c6-a36d-4f60-870f-a40bf134c319","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:19:08 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:19:08 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:19:17 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:19:17 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:19:17 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:19:17 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:19:17 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:19:17 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:19:17 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:19:17 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:19:17 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:19:17 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:19:17 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:19:17 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:19:17 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:19:17 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:19:17 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:19:17 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:19:17 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:19:17 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:19:17 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:19:17 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:19:22 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"a3a8b5ed-cf03-476d-8326-ced5cdbb67ff","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:19:22 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:19:22 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:19:45 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:19:45 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:19:45 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:19:45 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:19:45 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:19:45 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:19:45 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:19:45 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:19:45 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:19:45 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:19:45 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:19:45 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:19:45 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:19:45 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:19:45 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:19:45 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:19:45 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:19:45 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:19:45 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:19:45 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:19:50 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"e7fce2f7-e197-42f5-a077-aca4d64682b6","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:19:50 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:19:50 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:19:58 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:19:58 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:19:58 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:19:58 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:19:58 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:19:58 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:19:58 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:19:58 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:19:58 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:19:58 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:19:58 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:19:58 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:19:58 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:19:58 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:19:58 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:19:58 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:19:58 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:19:58 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:19:58 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:19:58 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:20:01 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"31752803-ac73-4b5e-980b-0981043f3912","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:20:01 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:20:01 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:22:08 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:22:08 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:22:08 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:22:08 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:22:08 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:22:08 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:22:08 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:22:08 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:22:08 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:22:08 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:22:08 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:22:08 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:22:08 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:22:08 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:22:08 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:22:08 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:22:08 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:22:08 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:22:08 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:22:08 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:22:12 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"c1d28901-79c5-4949-9fed-bde619cd08ef","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:22:12 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:22:12 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:22:25 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:22:25 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:22:25 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:22:25 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:22:25 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:22:25 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:22:25 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:22:25 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:22:25 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:22:25 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:22:25 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:22:25 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:22:25 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:22:25 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:22:25 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:22:25 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:22:25 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:22:25 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:22:25 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:22:25 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:22:28 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"829c55b1-ac9b-4bb9-ab9c-6a210139752d","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:22:28 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:22:28 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:22:36 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:22:36 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:22:36 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:22:36 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:22:36 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:22:36 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:22:36 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:22:36 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:22:36 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:22:36 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:22:36 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:22:36 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:22:36 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:22:36 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:22:36 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:22:36 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:22:36 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:22:36 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:22:36 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:22:36 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:22:39 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"70134dda-9ce6-47b7-a9d8-b8e7e046de41","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:22:39 GMT [error]:No metadata for "AddressEntity" was found.
+Fri, 18 Aug 2023 12:22:39 GMT [log]:response:/address/1 status code:500 length:52
+Fri, 18 Aug 2023 12:25:03 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:25:03 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:25:03 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:25:03 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:25:03 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:25:03 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:25:03 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:25:03 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:25:03 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:25:03 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:25:03 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:25:03 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:25:03 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:25:03 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:25:03 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:25:03 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:25:03 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:25:03 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:25:03 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:25:03 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:25:07 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"46cec960-b6ef-41e1-b850-c1c1a4942ada","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:25:07 GMT [log]:response:/address/1 status code:200 length:159
+Fri, 18 Aug 2023 12:25:38 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:25:38 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:25:38 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:25:38 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:25:38 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:25:38 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:25:38 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:25:38 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:25:38 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:25:38 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:25:38 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:25:38 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:25:38 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:25:38 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:25:38 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:25:38 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:25:38 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:25:38 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:25:38 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:25:38 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:25:49 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:25:49 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:25:49 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:25:49 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:25:49 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:25:49 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:25:49 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:25:49 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:25:49 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:25:49 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:25:49 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:25:49 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:25:49 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:25:49 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:25:49 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:25:49 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:25:49 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:25:49 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:25:49 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:25:49 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:25:52 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"530aca01-31f8-4e86-871a-f52249d7e4a7","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:25:52 GMT [log]:response:/address/1 status code:200 length:159
+Fri, 18 Aug 2023 12:25:55 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"35b779e1-43f0-4975-869c-e84ee4f6c435","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:25:55 GMT [log]:response:/address/1 status code:200 length:159
+Fri, 18 Aug 2023 12:26:17 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:26:17 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:26:17 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:26:17 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:26:17 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:26:17 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:26:17 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:26:17 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:26:17 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:26:17 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:26:17 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:26:17 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:26:17 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:26:17 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:26:17 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:26:17 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:26:17 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:26:17 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:26:17 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:26:17 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:26:28 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:26:28 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:26:28 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:26:28 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:26:28 GMT [log]:DatabaseModule dependencies initialized
+Fri, 18 Aug 2023 12:26:28 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:26:28 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:26:28 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:26:28 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:26:28 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:26:28 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:26:28 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:26:28 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:26:28 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:26:28 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:26:28 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:26:28 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:26:28 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:26:28 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:26:28 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:26:30 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"5747022d-bab2-456b-9f1d-48880bbc437a","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:26:30 GMT [log]:response:/address/1 status code:200 length:159
+Fri, 18 Aug 2023 12:26:34 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"dddaedc6-7d89-48bf-97ca-18df966e1a85","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/2,
+    }
+Fri, 18 Aug 2023 12:26:34 GMT [log]:response:/address/2 status code:404 length:68
+Fri, 18 Aug 2023 12:26:42 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"42c7795a-53ab-4855-b07d-80247883e5ed","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address,
+    }
+Fri, 18 Aug 2023 12:26:42 GMT [log]:response:/address status code:400 length:114
+Fri, 18 Aug 2023 12:26:46 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"a06d3d16-e415-46b2-92b7-d6925c56e75e","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/1,
+    }
+Fri, 18 Aug 2023 12:26:46 GMT [log]:response:/address/1 status code:200 length:159
+Fri, 18 Aug 2023 12:26:57 GMT [log]:req: {
+      headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"fc929faa-9c2c-450a-be00-7b667c8a6392","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"85"},
+      body: {"addressLine":"234 Queen street","postCode":"4000","state":"QLD"},
+      originalUrl: /address,
+    }
+Fri, 18 Aug 2023 12:26:57 GMT [log]:response:/address status code:201 length:undefined
+Fri, 18 Aug 2023 12:27:04 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"435dc2cf-34bb-4f86-98ff-01d0f972fba8","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/2,
+    }
+Fri, 18 Aug 2023 12:27:04 GMT [log]:response:/address/2 status code:200 length:159
+Fri, 18 Aug 2023 12:28:32 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:28:32 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:28:32 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:28:32 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:28:32 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:28:32 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:28:32 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:28:32 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:28:32 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:28:32 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:28:32 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:28:32 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:28:32 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:28:32 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:28:32 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:28:32 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:28:32 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:28:32 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:28:32 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:28:36 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"aa316536-b7fc-45e1-8cfe-21833e32d57f","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/2,
+    }
+Fri, 18 Aug 2023 12:28:36 GMT [log]:response:/address/2 status code:200 length:159
+Fri, 18 Aug 2023 12:29:31 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:29:31 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:29:31 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:29:31 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:29:31 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:29:31 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:29:31 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:29:31 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:29:31 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:29:31 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:29:31 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:29:31 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:29:31 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:29:31 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:29:31 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:29:31 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:29:31 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:29:31 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:29:31 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:29:46 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"b2bc8691-8aa7-4af6-b0ff-b914515a68c8","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/2,
+    }
+Fri, 18 Aug 2023 12:29:46 GMT [log]:response:/address/2 status code:200 length:159
+Fri, 18 Aug 2023 12:30:19 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:30:19 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:30:19 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:30:19 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:30:19 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:30:19 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:30:19 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:30:19 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:30:19 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:30:19 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:30:19 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:30:19 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:30:19 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:30:19 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:30:19 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:30:19 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:30:19 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:30:19 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:30:19 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:32:29 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 12:32:29 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 12:32:29 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 12:32:29 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 12:32:29 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 12:32:29 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:32:29 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 12:32:29 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 12:32:29 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 12:32:29 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 12:32:29 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 12:32:29 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 12:32:29 GMT [log]:Mapped {/address, POST} route
+Fri, 18 Aug 2023 12:32:29 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 12:32:29 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 12:32:29 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 12:32:29 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 12:32:29 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 12:32:29 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 12:32:38 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"53137018-0b68-475f-a724-1383f48cc91b","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/2,
+    }
+Fri, 18 Aug 2023 12:32:38 GMT [log]:response:/address/2 status code:200 length:159
+Fri, 18 Aug 2023 23:55:25 GMT [log]:AddressController initialized!
+Fri, 18 Aug 2023 23:55:25 GMT [log]:ConfigHostModule dependencies initialized
+Fri, 18 Aug 2023 23:55:25 GMT [log]:AppModule dependencies initialized
+Fri, 18 Aug 2023 23:55:25 GMT [log]:ConfigModule dependencies initialized
+Fri, 18 Aug 2023 23:55:25 GMT [log]:TypeOrmCoreModule dependencies initialized
+Fri, 18 Aug 2023 23:55:25 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 23:55:25 GMT [log]:AddressBookModule dependencies initialized
+Fri, 18 Aug 2023 23:55:25 GMT [log]:Starting Nest application...
+Fri, 18 Aug 2023 23:55:25 GMT [log]:Mapped {/, GET} route
+Fri, 18 Aug 2023 23:55:25 GMT [log]:AddressController {/address}:
+Fri, 18 Aug 2023 23:55:25 GMT [log]:Mapped {/address/:id, GET} route
+Fri, 18 Aug 2023 23:55:25 GMT [log]:Mapped {/address, GET} route
+Fri, 18 Aug 2023 23:55:25 GMT [log]:TypeOrmModule dependencies initialized
+Fri, 18 Aug 2023 23:55:25 GMT [log]:Mapped {/address/:id, PUT} route
+Fri, 18 Aug 2023 23:55:25 GMT [log]:Mapped {/address/:id, DELETE} route
+Fri, 18 Aug 2023 23:55:25 GMT [log]:Nest application successfully started
+Fri, 18 Aug 2023 23:55:25 GMT [log]:AppController {/}:
+Fri, 18 Aug 2023 23:55:25 GMT [log]:LoggerModule dependencies initialized
+Fri, 18 Aug 2023 23:55:25 GMT [log]:Mapped {/address, POST} route
+Sat, 19 Aug 2023 00:09:17 GMT [log]:AddressController initialized!
+Sat, 19 Aug 2023 00:09:17 GMT [log]:Starting Nest application...
+Sat, 19 Aug 2023 00:09:17 GMT [log]:LoggerModule dependencies initialized
+Sat, 19 Aug 2023 00:09:17 GMT [log]:ConfigHostModule dependencies initialized
+Sat, 19 Aug 2023 00:09:17 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:09:17 GMT [log]:AppModule dependencies initialized
+Sat, 19 Aug 2023 00:09:17 GMT [log]:TypeOrmCoreModule dependencies initialized
+Sat, 19 Aug 2023 00:09:17 GMT [log]:ConfigModule dependencies initialized
+Sat, 19 Aug 2023 00:09:17 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:09:17 GMT [log]:AddressBookModule dependencies initialized
+Sat, 19 Aug 2023 00:09:17 GMT [log]:AppController {/}:
+Sat, 19 Aug 2023 00:09:17 GMT [log]:Mapped {/, GET} route
+Sat, 19 Aug 2023 00:09:17 GMT [log]:AddressController {/address}:
+Sat, 19 Aug 2023 00:09:17 GMT [log]:Mapped {/address/:id, GET} route
+Sat, 19 Aug 2023 00:09:17 GMT [log]:Mapped {/address, GET} route
+Sat, 19 Aug 2023 00:09:17 GMT [log]:Mapped {/address, POST} route
+Sat, 19 Aug 2023 00:09:17 GMT [log]:Mapped {/address/:id, PUT} route
+Sat, 19 Aug 2023 00:09:17 GMT [log]:Mapped {/address/:id, DELETE} route
+Sat, 19 Aug 2023 00:09:17 GMT [log]:Nest application successfully started
+Sat, 19 Aug 2023 00:09:24 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"c2f538cb-b95d-4c27-84e3-6528d7963d47","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/2,
+    }
+Sat, 19 Aug 2023 00:09:24 GMT [log]:response:/address/2 status code:200 length:159
+Sat, 19 Aug 2023 00:10:53 GMT [log]:AddressController initialized!
+Sat, 19 Aug 2023 00:10:53 GMT [log]:ConfigHostModule dependencies initialized
+Sat, 19 Aug 2023 00:10:53 GMT [log]:AppModule dependencies initialized
+Sat, 19 Aug 2023 00:10:53 GMT [log]:ConfigModule dependencies initialized
+Sat, 19 Aug 2023 00:10:53 GMT [log]:TypeOrmCoreModule dependencies initialized
+Sat, 19 Aug 2023 00:10:53 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:10:53 GMT [log]:AddressBookModule dependencies initialized
+Sat, 19 Aug 2023 00:10:53 GMT [log]:Starting Nest application...
+Sat, 19 Aug 2023 00:10:53 GMT [log]:LoggerModule dependencies initialized
+Sat, 19 Aug 2023 00:10:53 GMT [log]:AddressController {/address}:
+Sat, 19 Aug 2023 00:10:53 GMT [log]:AppController {/}:
+Sat, 19 Aug 2023 00:10:53 GMT [log]:Mapped {/, GET} route
+Sat, 19 Aug 2023 00:10:53 GMT [log]:Mapped {/address, POST} route
+Sat, 19 Aug 2023 00:10:53 GMT [log]:Mapped {/address/:id, PUT} route
+Sat, 19 Aug 2023 00:10:53 GMT [log]:Mapped {/address/:id, DELETE} route
+Sat, 19 Aug 2023 00:10:53 GMT [log]:Nest application successfully started
+Sat, 19 Aug 2023 00:10:53 GMT [log]:Mapped {/address/:id, GET} route
+Sat, 19 Aug 2023 00:10:53 GMT [log]:Mapped {/address, GET} route
+Sat, 19 Aug 2023 00:10:53 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:10:57 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"587741f4-48d8-4715-bd78-c7152fd363f1","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/2,
+    }
+Sat, 19 Aug 2023 00:10:57 GMT [log]:response:/address/2 status code:200 length:159
+Sat, 19 Aug 2023 00:13:03 GMT [log]:AddressController initialized!
+Sat, 19 Aug 2023 00:13:03 GMT [log]:Starting Nest application...
+Sat, 19 Aug 2023 00:13:03 GMT [log]:AppModule dependencies initialized
+Sat, 19 Aug 2023 00:13:03 GMT [log]:ConfigModule dependencies initialized
+Sat, 19 Aug 2023 00:13:03 GMT [log]:ConfigHostModule dependencies initialized
+Sat, 19 Aug 2023 00:13:03 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:13:03 GMT [log]:AddressBookModule dependencies initialized
+Sat, 19 Aug 2023 00:13:03 GMT [log]:AppController {/}:
+Sat, 19 Aug 2023 00:13:03 GMT [log]:Mapped {/, GET} route
+Sat, 19 Aug 2023 00:13:03 GMT [log]:AddressController {/address}:
+Sat, 19 Aug 2023 00:13:03 GMT [log]:Mapped {/address/:id, GET} route
+Sat, 19 Aug 2023 00:13:03 GMT [log]:Mapped {/address, GET} route
+Sat, 19 Aug 2023 00:13:03 GMT [log]:Mapped {/address, POST} route
+Sat, 19 Aug 2023 00:13:03 GMT [log]:Mapped {/address/:id, PUT} route
+Sat, 19 Aug 2023 00:13:03 GMT [log]:LoggerModule dependencies initialized
+Sat, 19 Aug 2023 00:13:03 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:13:03 GMT [log]:TypeOrmCoreModule dependencies initialized
+Sat, 19 Aug 2023 00:13:03 GMT [log]:Mapped {/address/:id, DELETE} route
+Sat, 19 Aug 2023 00:13:03 GMT [log]:Nest application successfully started
+Sat, 19 Aug 2023 00:14:28 GMT [log]:AddressController initialized!
+Sat, 19 Aug 2023 00:14:28 GMT [log]:ConfigHostModule dependencies initialized
+Sat, 19 Aug 2023 00:14:28 GMT [log]:AppModule dependencies initialized
+Sat, 19 Aug 2023 00:14:28 GMT [log]:ConfigModule dependencies initialized
+Sat, 19 Aug 2023 00:14:28 GMT [log]:TypeOrmCoreModule dependencies initialized
+Sat, 19 Aug 2023 00:14:28 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:14:28 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:14:28 GMT [log]:AppController {/}:
+Sat, 19 Aug 2023 00:14:28 GMT [log]:Mapped {/, GET} route
+Sat, 19 Aug 2023 00:14:28 GMT [log]:AddressController {/address}:
+Sat, 19 Aug 2023 00:14:28 GMT [log]:Mapped {/address/:id, GET} route
+Sat, 19 Aug 2023 00:14:28 GMT [log]:Mapped {/address, GET} route
+Sat, 19 Aug 2023 00:14:28 GMT [log]:Mapped {/address, POST} route
+Sat, 19 Aug 2023 00:14:28 GMT [log]:Mapped {/address/:id, PUT} route
+Sat, 19 Aug 2023 00:14:28 GMT [log]:Mapped {/address/:id, DELETE} route
+Sat, 19 Aug 2023 00:14:28 GMT [log]:Nest application successfully started
+Sat, 19 Aug 2023 00:14:28 GMT [log]:Starting Nest application...
+Sat, 19 Aug 2023 00:14:28 GMT [log]:AddressBookModule dependencies initialized
+Sat, 19 Aug 2023 00:14:28 GMT [log]:LoggerModule dependencies initialized
+Sat, 19 Aug 2023 00:14:34 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"e8443029-117d-472d-ba0a-8dbe97f48c44","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/,
+    }
+Sat, 19 Aug 2023 00:14:34 GMT [error]:Unknown column 'address.postcode' in 'field list'
+Sat, 19 Aug 2023 00:14:34 GMT [log]:response:/address/ status code:500 length:52
+Sat, 19 Aug 2023 00:15:12 GMT [log]:AddressController initialized!
+Sat, 19 Aug 2023 00:15:12 GMT [log]:ConfigHostModule dependencies initialized
+Sat, 19 Aug 2023 00:15:12 GMT [log]:AppModule dependencies initialized
+Sat, 19 Aug 2023 00:15:12 GMT [log]:ConfigModule dependencies initialized
+Sat, 19 Aug 2023 00:15:12 GMT [log]:TypeOrmCoreModule dependencies initialized
+Sat, 19 Aug 2023 00:15:12 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:15:12 GMT [log]:AddressBookModule dependencies initialized
+Sat, 19 Aug 2023 00:15:12 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:15:12 GMT [log]:LoggerModule dependencies initialized
+Sat, 19 Aug 2023 00:15:12 GMT [log]:AddressController {/address}:
+Sat, 19 Aug 2023 00:15:12 GMT [log]:Mapped {/address/:id, GET} route
+Sat, 19 Aug 2023 00:15:12 GMT [log]:Mapped {/address, GET} route
+Sat, 19 Aug 2023 00:15:12 GMT [log]:Mapped {/address, POST} route
+Sat, 19 Aug 2023 00:15:12 GMT [log]:Mapped {/address/:id, PUT} route
+Sat, 19 Aug 2023 00:15:12 GMT [log]:Mapped {/address/:id, DELETE} route
+Sat, 19 Aug 2023 00:15:12 GMT [log]:Mapped {/, GET} route
+Sat, 19 Aug 2023 00:15:12 GMT [log]:Starting Nest application...
+Sat, 19 Aug 2023 00:15:12 GMT [log]:Nest application successfully started
+Sat, 19 Aug 2023 00:15:12 GMT [log]:AppController {/}:
+Sat, 19 Aug 2023 00:15:17 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"3932d257-5bae-4027-b157-afa1ca09dc18","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/,
+    }
+Sat, 19 Aug 2023 00:15:17 GMT [error]:Unknown column 'address.postcode' in 'order clause'
+Sat, 19 Aug 2023 00:15:17 GMT [log]:response:/address/ status code:500 length:52
+Sat, 19 Aug 2023 00:15:28 GMT [log]:AddressController initialized!
+Sat, 19 Aug 2023 00:15:28 GMT [log]:ConfigHostModule dependencies initialized
+Sat, 19 Aug 2023 00:15:28 GMT [log]:AppModule dependencies initialized
+Sat, 19 Aug 2023 00:15:28 GMT [log]:ConfigModule dependencies initialized
+Sat, 19 Aug 2023 00:15:28 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:15:28 GMT [log]:LoggerModule dependencies initialized
+Sat, 19 Aug 2023 00:15:28 GMT [log]:TypeOrmCoreModule dependencies initialized
+Sat, 19 Aug 2023 00:15:28 GMT [log]:AppController {/}:
+Sat, 19 Aug 2023 00:15:28 GMT [log]:Mapped {/, GET} route
+Sat, 19 Aug 2023 00:15:28 GMT [log]:AddressController {/address}:
+Sat, 19 Aug 2023 00:15:28 GMT [log]:Mapped {/address/:id, GET} route
+Sat, 19 Aug 2023 00:15:28 GMT [log]:Starting Nest application...
+Sat, 19 Aug 2023 00:15:28 GMT [log]:Mapped {/address, POST} route
+Sat, 19 Aug 2023 00:15:28 GMT [log]:Mapped {/address/:id, PUT} route
+Sat, 19 Aug 2023 00:15:28 GMT [log]:Mapped {/address/:id, DELETE} route
+Sat, 19 Aug 2023 00:15:28 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:15:28 GMT [log]:Mapped {/address, GET} route
+Sat, 19 Aug 2023 00:15:28 GMT [log]:Nest application successfully started
+Sat, 19 Aug 2023 00:15:28 GMT [log]:AddressBookModule dependencies initialized
+Sat, 19 Aug 2023 00:15:31 GMT [log]:req: {
+      headers: {"user-agent":"PostmanRuntime/7.32.3","accept":"*/*","postman-token":"7d021851-f074-48c9-94ab-ccea95a8efea","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"},
+      body: {},
+      originalUrl: /address/,
+    }
+Sat, 19 Aug 2023 00:15:31 GMT [log]:response:/address/ status code:200 length:139
+Sat, 19 Aug 2023 00:16:03 GMT [log]:AddressController initialized!
+Sat, 19 Aug 2023 00:16:03 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:16:03 GMT [log]:ConfigHostModule dependencies initialized
+Sat, 19 Aug 2023 00:16:03 GMT [log]:ConfigModule dependencies initialized
+Sat, 19 Aug 2023 00:16:03 GMT [log]:TypeOrmCoreModule dependencies initialized
+Sat, 19 Aug 2023 00:16:03 GMT [log]:TypeOrmModule dependencies initialized
+Sat, 19 Aug 2023 00:16:03 GMT [log]:AddressBookModule dependencies initialized
+Sat, 19 Aug 2023 00:16:03 GMT [log]:AppController {/}:
+Sat, 19 Aug 2023 00:16:03 GMT [log]:Mapped {/, GET} route
+Sat, 19 Aug 2023 00:16:03 GMT [log]:AddressController {/address}:
+Sat, 19 Aug 2023 00:16:03 GMT [log]:Mapped {/address/:id, GET} route
+Sat, 19 Aug 2023 00:16:03 GMT [log]:Mapped {/address, GET} route
+Sat, 19 Aug 2023 00:16:03 GMT [log]:Mapped {/address, POST} route
+Sat, 19 Aug 2023 00:16:03 GMT [log]:Mapped {/address/:id, PUT} route
+Sat, 19 Aug 2023 00:16:03 GMT [log]:Mapped {/address/:id, DELETE} route
+Sat, 19 Aug 2023 00:16:03 GMT [log]:LoggerModule dependencies initialized
+Sat, 19 Aug 2023 00:16:03 GMT [log]:Starting Nest application...
+Sat, 19 Aug 2023 00:16:03 GMT [log]:AppModule dependencies initialized
+Sat, 19 Aug 2023 00:16:03 GMT [log]:Nest application successfully started

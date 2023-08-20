@@ -1,5 +1,6 @@
 import { IsNumberString, IsNotEmpty, IsArray } from "class-validator";
 import { ContactDto } from "./contact.dto";
+import { RoleDto } from "./role.dto";
 
 export class UserDto {
     @IsNumberString()
@@ -13,4 +14,7 @@ export class UserDto {
 
     @IsArray()
     contacts: ContactDto[];
+
+    @IsArray()
+    roles: RoleDto[];
 }

@@ -6,11 +6,12 @@ import { UserEntity } from '../common/entities/user.entity';
 import { LoggerModule } from '../logger/logger.module';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
+import { RoleEntity } from '../common/entities/role.entity';
 
 @Module({
   imports: [
     LoggerModule,
-    TypeOrmModule.forFeature([AddressEntity, UserEntity, ContactEntity]),
+    TypeOrmModule.forFeature([AddressEntity, UserEntity, ContactEntity, RoleEntity]),
   ],
   controllers: [UserController],
   providers: [UserService],

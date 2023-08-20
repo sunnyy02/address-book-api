@@ -6,6 +6,7 @@ import { CreateUsersDto } from './create-user.dto';
 import { AddressEntity } from '../common/entities/address.entity';
 import { ContactEntity } from '../common/entities/contact.entity';
 import { CreateContactDto } from './create-contact.dto';
+import { RoleEntity } from 'src/common/entities/role.entity';
 
 @Injectable()
 export class UserService {
@@ -14,6 +15,8 @@ export class UserService {
     private userRepository: Repository<UserEntity>,
     @InjectRepository(ContactEntity)
     private contactRepository: Repository<ContactEntity>,
+    @InjectRepository(RoleEntity)
+    private roleRepository: Repository<RoleEntity>,
     @InjectRepository(AddressEntity)
     private addressRepository: Repository<AddressEntity>,
   ) {}
@@ -44,6 +47,15 @@ export class UserService {
         userEntity.contacts.push(contactEntity);
       });
     }
+    if (user.roles?.length > 0){
+        userEntity.roles = [];
+        user.roles.forEach( role => {
+            //const roleEntity = await this.addOrGetRole(role.name);
+            const newRole = new RoleEntity();
+            newRole.name = role.name;
+            userEntity.roles.push(newRole);
+        });
+    }
     return await this.userRepository.save(userEntity);
   }
 
@@ -53,5 +65,17 @@ export class UserService {
     contactEntity.value = contact.value;
 
     return await this.contactRepository.save(contactEntity);
+  }
+
+  private async addOrGetRole(roleName: string){
+    const roleEntity = await this.roleRepository.findOne({
+        where: {name: roleName}
+    });
+    if(!roleEntity){
+        const newRole = new RoleEntity();
+        newRole.name = roleName;
+        return newRole;
+    }
+    return roleEntity;
   }
 }

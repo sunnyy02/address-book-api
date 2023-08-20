@@ -6,7 +6,7 @@ import {
 } from '@nestjs/typeorm';
 import { DataSource, EntityManager, Repository } from 'typeorm';
 import { AddressDto } from './address.dto';
-import { AddressEntity } from './address.entity';
+import { AddressEntity } from '../common/entities/address.entity';
 import { CreateAddressDto } from './create-address.dto';
 import { UpdateAddressDto } from './update-address.dto';
 

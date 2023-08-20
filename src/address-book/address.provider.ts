@@ -1,5 +1,5 @@
 import { DataSource, EntityManager } from 'typeorm';
-import { AddressEntity } from './address.entity';
+import { AddressEntity } from '../common/entities/address.entity';
 
 export const addressProvider = [
   {

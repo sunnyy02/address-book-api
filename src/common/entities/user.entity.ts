@@ -1,5 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, JoinColumn } from "typeorm";
-import { AddressEntity } from "./address.entity";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+  OneToOne,
+  JoinColumn,
+} from 'typeorm';
+import { AddressEntity } from './address.entity';
+import { ContactEntity } from './contact.entity';
 
 @Entity('user')
 export class UserEntity {
@@ -9,7 +17,12 @@ export class UserEntity {
   @Column()
   user_name: string;
 
-  @OneToOne(() => AddressEntity, address => address.user, {eager: true})
+  @OneToOne(() => AddressEntity, (address) => address.user, { eager: true })
   @JoinColumn()
   address: AddressEntity;
+
+  @OneToMany(() => ContactEntity, (contact) => contact.user, {
+    cascade: ['insert', 'update'],
+  })
+  contacts: ContactEntity[];
 }

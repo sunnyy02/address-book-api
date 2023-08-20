@@ -1,4 +1,3 @@
-import { Post } from "@nestjs/common";
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, JoinColumn } from "typeorm";
 import { AddressEntity } from "./address.entity";
 
@@ -8,9 +7,9 @@ export class UserEntity {
   id: number;
 
   @Column()
-  username: string;
+  user_name: string;
 
-  @OneToOne(() => AddressEntity, address => address.user)
+  @OneToOne(() => AddressEntity, address => address.user, {eager: true})
   @JoinColumn()
-  address: AddressEntity[];
+  address: AddressEntity;
 }

@@ -12,6 +12,7 @@ import { LoggerMiddleware } from './logger.middleware';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CommonModule } from './common/common.module';
+import { UserModule } from './user/user.module';
 
 const configService = new ConfigService();
 
@@ -36,6 +37,7 @@ const configService = new ConfigService();
     ),
     LoggerModule,
     CommonModule,
+    UserModule,
 
   ],
   controllers: [AppController],

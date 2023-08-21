@@ -22,11 +22,10 @@ export class UserService {
   ) {}
 
   async getByUserId(id: number) {
-    const user = await this.userRepository.findOne({
+    return await this.userRepository.findOne({
       where: { id },
       relations: ['contacts'],
     });
-    return user;
   }
 
   async createUser(user: CreateUsersDto) {
@@ -47,14 +46,14 @@ export class UserService {
         userEntity.contacts.push(contactEntity);
       });
     }
-    if (user.roles?.length > 0){
-        userEntity.roles = [];
-        user.roles.forEach( role => {
-            //const roleEntity = await this.addOrGetRole(role.name);
-            const newRole = new RoleEntity();
-            newRole.name = role.name;
-            userEntity.roles.push(newRole);
-        });
+    if (user.roles?.length > 0) {
+      userEntity.roles = [];
+      await Promise.all(
+        user.roles.map(async (role) => {
+          const roleEntity = await this.addOrGetRole(role.name);
+          userEntity.roles.push(roleEntity);
+        }),
+      );
     }
     return await this.userRepository.save(userEntity);
   }
@@ -67,14 +66,14 @@ export class UserService {
     return await this.contactRepository.save(contactEntity);
   }
 
-  private async addOrGetRole(roleName: string){
+  private async addOrGetRole(roleName: string) {
     const roleEntity = await this.roleRepository.findOne({
-        where: {name: roleName}
+      where: { name: roleName },
     });
-    if(!roleEntity){
-        const newRole = new RoleEntity();
-        newRole.name = roleName;
-        return newRole;
+    if (!roleEntity) {
+      const newRole = new RoleEntity();
+      newRole.name = roleName;
+      return newRole;
     }
     return roleEntity;
   }

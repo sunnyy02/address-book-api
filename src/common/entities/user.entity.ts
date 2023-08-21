@@ -25,11 +25,13 @@ export class UserEntity {
   address: AddressEntity;
 
   @OneToMany(() => ContactEntity, (contact) => contact.user, {
+    eager: true,
     cascade: ['insert', 'update'],
   })
   contacts: ContactEntity[];
 
-  @ManyToMany(() => RoleEntity, role => role.users,  {
+  @ManyToMany(() => RoleEntity, (role) => role.users, {
+    eager: true,
     cascade: ['insert', 'update'],
   })
   @JoinTable()

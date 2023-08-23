@@ -7,6 +7,8 @@ import {
   JoinColumn,
   JoinTable,
   ManyToMany,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import { AddressEntity } from './address.entity';
 import { ContactEntity } from './contact.entity';
@@ -36,4 +38,10 @@ export class UserEntity {
   })
   @JoinTable()
   roles: RoleEntity[];
+
+  // @CreateDateColumn()
+  // created_date: Date;
+
+  // @UpdateDateColumn()
+  // updated_date: Date;
 }

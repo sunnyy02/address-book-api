@@ -3,7 +3,6 @@ import { ApiParam } from '@nestjs/swagger';
 import { AddressIdParam } from './address-id-param';
 import { HttpAddressExceptionFilter} from '../http-exception.filter';
 import { AddressValidationPipe } from './address-validation.pipe';
-import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
 import { DuplicateAddressException } from './duplicate-address-exception';

@@ -21,6 +21,10 @@ export class UserService {
     private addressRepository: Repository<AddressEntity>,
   ) {}
 
+  async getAll(){
+    return await this.userRepository.find();
+  }
+
   async getByUserId(id: number) {
     return await this.userRepository.findOne({
       where: { id },

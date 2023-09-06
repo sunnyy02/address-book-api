@@ -1,32 +1,57 @@
-import { Body, ClassSerializerInterceptor, Controller, Get, NotFoundException, Param, ParseIntPipe, Post, SerializeOptions, UseInterceptors, UsePipes } from '@nestjs/common';
+import {
+  Body,
+  ClassSerializerInterceptor,
+  Controller,
+  Get,
+  NotFoundException,
+  Param,
+  ParseIntPipe,
+  Post,
+  SerializeOptions,
+  UseInterceptors,
+  UsePipes,
+} from '@nestjs/common';
+import { GROUP_DETAILS, GROUP_LIST } from '../common/entities/user.entity';
 import { CreateContactDto } from './create-contact.dto';
 import { CreateUsersDto } from './create-user.dto';
 import { UserService } from './user.service';
 
 @Controller('user')
 @UseInterceptors(ClassSerializerInterceptor)
-@SerializeOptions({})
+@SerializeOptions({
+  //strategy: 'excludeAll'
+  excludePrefixes: ['_'],
+})
 export class UserController {
-    constructor(private readonly userService: UserService){
+  constructor(private readonly userService: UserService) {}
 
-    }
+  @Get()
+  @SerializeOptions({
+    groups: [GROUP_LIST],
+  })
+  async getAll() {
+    return await this.userService.getAll();
+  }
 
-    @Get(':id')
-    async getByUserId(@Param('id', ParseIntPipe) id: number) {
-        const user = await this.userService.getByUserId(id);
-        if(!user){
-            throw new NotFoundException('user not found');
-        }
-        return user;
+  @Get(':id')
+  @SerializeOptions({
+    groups: [GROUP_DETAILS],
+  })
+  async getByUserId(@Param('id', ParseIntPipe) id: number) {
+    const user = await this.userService.getByUserId(id);
+    if (!user) {
+      throw new NotFoundException('user not found');
     }
+    return user;
+  }
 
-    @Post()
-    async create(@Body() user: CreateUsersDto) {
-        return await this.userService.createUser(user);
-    }
+  @Post()
+  async create(@Body() user: CreateUsersDto) {
+    return await this.userService.createUser(user);
+  }
 
-    @Post('contact')
-    async createContact(@Body() contact: CreateContactDto) {
-        return await this.userService.createUserContact(contact);
-    }
+  @Post('contact')
+  async createContact(@Body() contact: CreateContactDto) {
+    return await this.userService.createUserContact(contact);
+  }
 }

@@ -2,6 +2,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { ResponseInterceptor } from './common/response.interceptor';
 import { HttpAddressExceptionFilter } from './http-exception.filter';
 import { CustomLogger } from './logger/custom-logger';
 
@@ -38,7 +39,7 @@ async function bootstrap() {
   );
 
  // app.useGlobalFilters(new HttpAddressExceptionFilter());
-
+ app.useGlobalInterceptors(new ResponseInterceptor());
   await app.listen(3000);
 
   if (module.hot) {

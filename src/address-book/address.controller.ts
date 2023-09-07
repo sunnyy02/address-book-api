@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, ParseArrayPipe, UsePipes, Query, UseFilters, NotFoundException, Logger } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, ParseArrayPipe, UsePipes, Query, UseFilters, NotFoundException, Logger, UseInterceptors } from '@nestjs/common';
 import { ApiParam } from '@nestjs/swagger';
 import { AddressIdParam } from './address-id-param';
 import { HttpAddressExceptionFilter} from '../http-exception.filter';
@@ -9,9 +9,11 @@ import { CreateAddressDto } from './create-address.dto';
 import { DuplicateAddressException } from './duplicate-address-exception';
 import { CustomLogger } from '../logger/custom-logger';
 import { UpdateAddressDto } from './update-address.dto';
+import { CacheInterceptor } from '@nestjs/cache-manager';
 
 @Controller('address')
 @UseFilters(new HttpAddressExceptionFilter())
+@UseInterceptors(CacheInterceptor)
 export class AddressController {
     constructor(private readonly addressService: AddressService, private customLogger: CustomLogger) {
         this.customLogger.log('AddressController initialized!');
@@ -19,6 +21,7 @@ export class AddressController {
 
     @Get(':id')
     async getById(@Param('id', ParseIntPipe) id: number) {
+        console.log('hitting getById');
         const address = await this.addressService.getById(id);
         if(!address){
             throw new NotFoundException('Address not found');

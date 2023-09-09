@@ -37,8 +37,8 @@ export class UserController {
   @SerializeOptions({
     groups: [GROUP_DETAILS],
   })
-  async getByUserId(@Param('id', ParseIntPipe) id: number) {
-    const user = await this.userService.getByUserId(id);
+  async getById(@Param('id', ParseIntPipe) id: number) {
+    const user = await this.userService.getById(id);
     if (!user) {
       throw new NotFoundException('user not found');
     }

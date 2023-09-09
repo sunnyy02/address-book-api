@@ -25,10 +25,16 @@ export class UserService {
     return await this.userRepository.find();
   }
 
-  async getByUserId(id: number) {
+  async getById(id: number) {
     return await this.userRepository.findOne({
       where: { id },
       relations: ['contacts'],
+    });
+  }
+
+  async getByUserId(userId: string) {
+    return await this.userRepository.findOne({
+      where: { user_id: userId },
     });
   }
 

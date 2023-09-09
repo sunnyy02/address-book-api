@@ -25,6 +25,12 @@ export class UserEntity {
   @Expose({groups: [GROUP_DETAILS, GROUP_LIST]})
   user_name: string;
 
+  @Column()
+  user_id: string;
+
+  @Column()
+  password: string;
+
   @OneToOne(() => AddressEntity, (address) => address.user, { eager: true })
   @JoinColumn()
   @Expose({groups: [GROUP_DETAILS]})

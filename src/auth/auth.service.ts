@@ -3,7 +3,7 @@ import { CreateUsersDto } from 'src/user/create-user.dto';
 import { UserDto } from '../user/user.dto';
 import { UserService } from '../user/user.service';
 import { LoginDto } from './login.dto';
-
+import * as bcrypt from 'bcrypt';
 @Injectable()
 export class AuthService {
     constructor(private readonly userService: UserService){}
@@ -13,7 +13,11 @@ export class AuthService {
         if(user == null){
             throw new NotFoundException();
         }
-        if(user?.password !== loginDto.password){
+        const isPasswordMatching = await bcrypt.compare(
+            loginDto.password,
+            user.password
+          );
+        if(!isPasswordMatching){
             throw new UnauthorizedException();
         }
         return !!user;

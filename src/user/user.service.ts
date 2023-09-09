@@ -7,7 +7,8 @@ import { AddressEntity } from '../common/entities/address.entity';
 import { ContactEntity } from '../common/entities/contact.entity';
 import { CreateContactDto } from './create-contact.dto';
 import { RoleEntity } from 'src/common/entities/role.entity';
-
+import * as bcrypt from 'bcrypt';
+import { UserDto } from './user.dto';
 @Injectable()
 export class UserService {
   constructor(
@@ -42,7 +43,7 @@ export class UserService {
     const userEntity = new UserEntity();
     userEntity.user_name = user.name;
     userEntity.email = user.email;
-    userEntity.password = user.password;
+    userEntity.password = await bcrypt.hash(user.password, 10);
     
     if (user.addressId) {
       const address = await this.addressRepository.findOne({
@@ -68,7 +69,12 @@ export class UserService {
         }),
       );
     }
-    return await this.userRepository.save(userEntity);
+    const newUserEntity = await this.userRepository.save(userEntity);
+    return {
+      name: newUserEntity.user_name,
+      email: newUserEntity.email,
+      id: newUserEntity.id
+    } as UserDto;
   }
 
   async createUserContact(contact: CreateContactDto) {

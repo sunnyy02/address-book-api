@@ -28,6 +28,12 @@ export class UserService {
     });
   }
 
+  async getByUserId(userId: string) {
+    return await this.userRepository.findOne({
+      where: { user_id: userId },
+    });
+  }
+
   async createUser(user: CreateUsersDto) {
     const userEntity = new UserEntity();
     userEntity.user_name = user.name;

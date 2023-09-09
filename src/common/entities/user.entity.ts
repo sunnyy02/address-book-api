@@ -26,7 +26,7 @@ export class UserEntity {
   user_name: string;
 
   @Column()
-  user_id: string;
+  email: string;
 
   @Column()
   password: string;

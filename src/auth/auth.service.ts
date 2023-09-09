@@ -7,13 +7,13 @@ export class AuthService {
     constructor(private readonly userService: UserService){}
 
     async validateUser(loginDto: LoginDto) {  
-        const user = await this.userService.getByUserId(loginDto.userId);
+        const user = await this.userService.getByEmail(loginDto.email);
         if(user == null){
             throw new NotFoundException();
         }
         if(user?.password !== loginDto.password){
             throw new UnauthorizedException();
         }
-        return user;
+        return !!user;
     }
 }

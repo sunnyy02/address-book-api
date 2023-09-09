@@ -9,11 +9,11 @@ export class AuthController {
     @Post('login')  
     @HttpCode(HttpStatus.OK)  
     public async login(@Body() loginDto: LoginDto, @Res() res) {  
-      const user = await this.authService.validateUser(loginDto);  
-      if (!user) {  
+      const isValid = await this.authService.validateUser(loginDto);  
+      if (!isValid) {  
           return res.status(HttpStatus.NOT_FOUND).send('No user found with this user.');  
       }  
 
-      return res.json(user);  
+      return res.json(isValid);  
    }  
 }

@@ -32,15 +32,18 @@ export class UserService {
     });
   }
 
-  async getByUserId(userId: string) {
+  async getByEmail(email: string) {
     return await this.userRepository.findOne({
-      where: { user_id: userId },
+      where: { email },
     });
   }
 
   async createUser(user: CreateUsersDto) {
     const userEntity = new UserEntity();
     userEntity.user_name = user.name;
+    userEntity.email = user.email;
+    userEntity.password = user.password;
+    
     if (user.addressId) {
       const address = await this.addressRepository.findOne({
         where: { id: user.addressId },

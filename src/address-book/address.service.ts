@@ -23,7 +23,7 @@ export class AddressService {
       this.addressDataStore.length === 0
         ? 0
         : Math.max(...this.addressDataStore.map((t) => t.id));
-    const newAddress = { ...address, id: id + 1, createdDate: new Date() };
+    const newAddress = { ...address, id: id + 1, createdDate: new Date() } as AddressDto;
     this.addressDataStore.push(newAddress);
   }
   

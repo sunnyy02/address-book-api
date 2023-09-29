@@ -3,10 +3,10 @@ import { AddressService } from './address.service';
 
 @Controller('address')
 export class AddressController {
-    constructor(private readonly addressService: AddressService) {}
+  constructor(private readonly addressService: AddressService) {}
 
-    @Get(':id')
-    getById(@Param('id', ParseIntPipe) id: number) {
-        return this.addressService.getById(id);
-    }
+  @Get(':id')
+  getById(@Param('id', ParseIntPipe) id: number) {
+    return this.addressService.getById(id);
+  }
 }

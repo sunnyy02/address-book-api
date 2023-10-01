@@ -7,6 +7,7 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(),
   );
-  await app.listen(3000);
+  // When running fastify inside a docker, we need to specify the host, which should be '0.0.0.0'
+  await app.listen(3000, '0.0.0.0');
 }
 bootstrap();

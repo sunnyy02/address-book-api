@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { RequestScopeService } from './request-scope.service';
+import { UserSessionService } from './user-session.service';
 
 @Controller('scope4')
 export class Scope4Controller {
-  constructor(private readonly requestScopeService: RequestScopeService) {}
+  constructor(private readonly userSessionService: UserSessionService) {}
 
   @Get('request')
   requestScope() {
-    return this.requestScopeService.doSomething();
+    return this.userSessionService.getUserSessionId();
   }
 }

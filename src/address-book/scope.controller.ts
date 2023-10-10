@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { SingletonScopeService } from './singleton-scope.service';
+import { DatabaseService } from './database.service';
 
 @Controller('scope')
 export class ScopeController {
-  constructor(private readonly singletonService: SingletonScopeService) {}
+  constructor(private readonly databaseService: DatabaseService) {}
   
   @Get('singleton')
   singleton() {
-    return this.singletonService.doSomething();
+    return this.databaseService.getDatabaseConnectionString();
   }
 }

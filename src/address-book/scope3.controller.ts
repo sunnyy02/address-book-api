@@ -1,14 +1,14 @@
 import { Controller, Get } from '@nestjs/common';
-import { TransientScopeService } from './transient-scope.service';
+import { LoggerService } from './logger.service';
 
 @Controller('scope3')
 export class Scope3Controller {
-  constructor(private readonly transientScopeServie: TransientScopeService) {
-    this.transientScopeServie.prefix = 'Scope3Controller';
+  constructor(private readonly loggerService: LoggerService) {
+    this.loggerService.prefix = 'Scope3Controller';
   }
 
   @Get('transient')
   transientScope() {
-    return this.transientScopeServie.doSomething();
+    return this.loggerService.log(`data logged for transient scope at ${Date.now()}`);
   }
 }

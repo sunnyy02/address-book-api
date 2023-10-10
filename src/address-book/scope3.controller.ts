@@ -4,11 +4,11 @@ import { TransientScopeService } from './transient-scope.service';
 @Controller('scope3')
 export class Scope3Controller {
   constructor(private readonly transientScopeServie: TransientScopeService) {
-    this.transientScopeServie.prefix = 'scope3 controller';
+    this.transientScopeServie.prefix = 'Scope3Controller';
   }
 
   @Get('transient')
   transientScope() {
-    this.transientScopeServie.doSomething();
+    return this.transientScopeServie.doSomething();
   }
 }

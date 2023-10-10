@@ -6,11 +6,11 @@ export class Scope2Controller {
   constructor(
     private readonly transientScopeServie: TransientScopeService,
   ) {
-    this.transientScopeServie.prefix = 'scope2 controller';
+    this.transientScopeServie.prefix = 'Scope2Controller';
   }
 
   @Get('transient')
   transientScope() {
-    this.transientScopeServie.doSomething();
+    return this.transientScopeServie.doSomething();
   }
 }

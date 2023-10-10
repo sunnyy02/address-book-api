@@ -7,6 +7,6 @@ export class Scope4Controller {
 
   @Get('request')
   requestScope() {
-    this.requestScopeService.doSomething();
+    return this.requestScopeService.doSomething();
   }
 }

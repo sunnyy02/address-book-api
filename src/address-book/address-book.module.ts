@@ -6,6 +6,6 @@ import { AddressService } from './address.service';
 @Module({
   imports: [LoggerModule],
   controllers: [AddressController],
-  providers: [AddressService]
+  providers: [AddressService],
 })
 export class AddressBookModule {}

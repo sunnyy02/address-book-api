@@ -8,6 +8,6 @@ import { AddressEntity } from './address.entity';
 @Module({
   imports: [LoggerModule, TypeOrmModule.forFeature([AddressEntity])],
   controllers: [AddressController],
-  providers: [ AddressService],
+  providers: [AddressService],
 })
 export class AddressBookModule {}

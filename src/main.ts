@@ -27,11 +27,11 @@ async function bootstrap() {
       validationError: {
         value: false,
       },
-      transform: true
+      transform: true,
     }),
   );
 
- // app.useGlobalFilters(new HttpAddressExceptionFilter());
+  // app.useGlobalFilters(new HttpAddressExceptionFilter());
 
   await app.listen(3000);
 

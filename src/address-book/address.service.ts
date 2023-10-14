@@ -34,9 +34,9 @@ export class AddressService {
   async getById(id: number) {
     // use repository
     const sql = this.addressRepository
-                .createQueryBuilder('address')
-                .where('address.id=:id', { id })
-                .getSql();
+      .createQueryBuilder('address')
+      .where('address.id=:id', { id })
+      .getSql();
     console.log('sql:', sql);
     return await this.addressRepository
       .createQueryBuilder('address')
@@ -81,25 +81,23 @@ export class AddressService {
 
   async update(id: number, address: UpdateAddressDto) {
     return await this.addressRepository
-          .createQueryBuilder()
-          .update(AddressEntity)
-          .set(
-            {
-              address_line: address.addressLine,
-              post_code: address.postCode.toString(),
-              state: address.state
-            }
-          )
-          .where('id=:id', {id: address.id})
-          .execute();
+      .createQueryBuilder()
+      .update(AddressEntity)
+      .set({
+        address_line: address.addressLine,
+        post_code: address.postCode.toString(),
+        state: address.state,
+      })
+      .where('id=:id', { id: address.id })
+      .execute();
   }
 
   async delete(id: number) {
     return await this.addressRepository
-                .createQueryBuilder()
-                .delete()
-                .from(AddressEntity)
-                .where('id=:id', {id})
-                .execute();
+      .createQueryBuilder()
+      .delete()
+      .from(AddressEntity)
+      .where('id=:id', { id })
+      .execute();
   }
 }

@@ -30,14 +30,14 @@ export class AddressService {
     const newAddress = { ...address, id: id + 1, createdDate: new Date() };
     this.addressDataStore.push(newAddress);
   }
-  
+
   update(id: number, address: AddressDto): void {
-    const index = this.addressDataStore.findIndex( x => x.id === id);
+    const index = this.addressDataStore.findIndex((x) => x.id === id);
     this.addressDataStore[index] = address;
   }
 
   delete(id: number) {
-    const index = this.addressDataStore.findIndex( x => x.id === id);
+    const index = this.addressDataStore.findIndex((x) => x.id === id);
     this.addressDataStore.splice(index, 1);
   }
 }

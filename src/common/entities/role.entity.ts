@@ -9,7 +9,7 @@ export class RoleEntity {
   @Column()
   name: string;
 
-  @ManyToMany(() => UserEntity, user => user.roles,  {
+  @ManyToMany(() => UserEntity, (user) => user.roles, {
     cascade: ['insert', 'update'],
   })
   users: UserEntity[];

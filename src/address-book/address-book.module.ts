@@ -7,8 +7,11 @@ import { AddressEntity } from '../common/entities/address.entity';
 import { UserEntity } from '../common/entities/user.entity';
 
 @Module({
-  imports: [LoggerModule, TypeOrmModule.forFeature([AddressEntity, UserEntity])],
+  imports: [
+    LoggerModule,
+    TypeOrmModule.forFeature([AddressEntity, UserEntity]),
+  ],
   controllers: [AddressController],
-  providers: [ AddressService],
+  providers: [AddressService],
 })
 export class AddressBookModule {}

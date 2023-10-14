@@ -14,19 +14,17 @@ export class AddressService {
 
   async getById(id: number) {
     return await this.addressRepository.findOne({
-      where: {id,}
+      where: { id },
     });
   }
 
   async getByAddressLine(addressLine: string) {
-    return await this.addressRepository.find(
-      {
-        where: {address_line: addressLine}
-      }
-    )
+    return await this.addressRepository.find({
+      where: { address_line: addressLine },
+    });
   }
 
- async create(address: CreateAddressDto) {
+  async create(address: CreateAddressDto) {
     const entity = new AddressEntity();
     entity.address_line = address.addressLine;
     entity.state = address.state;

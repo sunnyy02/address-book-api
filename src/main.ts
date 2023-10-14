@@ -10,9 +10,9 @@ declare const module: any;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: ['error', 'warn', 'debug', 'log'],
-    bufferLogs: true
+    bufferLogs: true,
   });
-  
+
   app.useLogger(app.get(CustomLogger));
   app.enableCors();
 
@@ -33,11 +33,11 @@ async function bootstrap() {
       validationError: {
         value: false,
       },
-      transform: true
+      transform: true,
     }),
   );
 
- // app.useGlobalFilters(new HttpAddressExceptionFilter());
+  // app.useGlobalFilters(new HttpAddressExceptionFilter());
 
   await app.listen(3000);
 

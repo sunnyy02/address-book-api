@@ -30,7 +30,7 @@ export class AddressService {
     return this.addressDataStore.find((t) => t.addressLine === addressLine);
   }
 
- async create(address: CreateAddressDto) {
+  async create(address: CreateAddressDto) {
     const entity = new AddressEntity();
     entity.address_line = address.addressLine;
     entity.state = address.state;

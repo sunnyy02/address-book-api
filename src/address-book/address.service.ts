@@ -1,10 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
-import {
-  InjectDataSource,
-  InjectEntityManager,
-  InjectRepository,
-} from '@nestjs/typeorm';
-import { DataSource, EntityManager, Repository } from 'typeorm';
+import { InjectEntityManager, InjectRepository } from '@nestjs/typeorm';
+import { EntityManager, Repository } from 'typeorm';
 import { AddressDto } from './address.dto';
 import { AddressEntity } from './address.entity';
 import { CreateAddressDto } from './create-address.dto';
@@ -17,8 +13,6 @@ export class AddressService {
     private addressRepository: Repository<AddressEntity>,
     @InjectEntityManager()
     private entityManager: EntityManager,
-    @InjectDataSource()
-    private dataSource: DataSource,
   ) {}
 
   async getAll() {
@@ -42,14 +36,6 @@ export class AddressService {
       .createQueryBuilder('address')
       .where('address.id=:id', { id })
       .getOne();
-
-    //use DataSource
-    // return await this.dataSource
-    //             .createQueryBuilder()
-    //             .select('address')
-    //             .from(AddressEntity, 'address')
-    //             .where('address.id=:id', {id})
-    //             .getOne();
 
     // use entity manager
     // return await this.entityManager.createQueryBuilder(AddressEntity, 'address')

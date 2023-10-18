@@ -26,6 +26,12 @@ export class UserService {
     return user;
   }
 
+  async getAllUsers() {
+    return await this.userRepository.find({
+      relations: ['contacts'],
+    });
+  }
+
   async createUser(user: CreateUsersDto) {
     const userEntity = new UserEntity();
     userEntity.user_name = user.name;

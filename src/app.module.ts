@@ -28,6 +28,7 @@ const configService = new ConfigService();
       database: configService.get('DATABASE_NAME'),
       autoLoadEntities: true,
       synchronize: configService.get('SYNCHRONIZE'),
+      logging: true
     }),
     LoggerModule,
   ],

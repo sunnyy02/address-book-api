@@ -9,6 +9,7 @@ export class UserDto {
     name: string;
     
     @IsNumberString()
+    @IsOptional()
     addressId: number;
 
     @IsArray()

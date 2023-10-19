@@ -14,7 +14,6 @@ import {
   NotFoundException,
   Logger,
 } from '@nestjs/common';
-import { ApiParam } from '@nestjs/swagger';
 import { AddressIdParam } from './address-id-param';
 import { HttpAddressExceptionFilter } from '../http-exception.filter';
 import { AddressValidationPipe } from './address-validation.pipe';
@@ -30,7 +29,7 @@ export class AddressController {
   //private logger = new Logger('AddressController');
   constructor(
     private readonly addressService: AddressService,
-    private customLogger: CustomLogger,
+    private readonly customLogger: CustomLogger,
   ) {
     this.customLogger.log('AddressController initialized!');
   }

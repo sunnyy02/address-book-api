@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Exclude, Expose } from 'class-transformer';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -21,5 +21,6 @@ export class UserEntity {
   email: string;
 
   @Column()
+  @Exclude()
   password: string;
 }

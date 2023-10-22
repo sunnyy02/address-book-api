@@ -10,17 +10,18 @@ export const GROUP_LIST = 'group_list';
 @Entity('user')
 export class UserEntity {
   @PrimaryGeneratedColumn()
-  @Expose({groups: [GROUP_DETAILS, GROUP_LIST]})
+  @Expose()
   id: number;
 
   @Column()
-  @Expose({groups: [GROUP_DETAILS, GROUP_LIST]})
+  @Expose()
   user_name: string;
 
   @Column()
+  @Expose()
   email: string;
 
   @Column()
-  @Exclude()
+  @Exclude({ toPlainOnly: true })
   password: string;
 }

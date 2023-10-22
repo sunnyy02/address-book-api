@@ -18,8 +18,7 @@ import { UserService } from './user.service';
 @Controller('user')
 @UseInterceptors(ClassSerializerInterceptor)
 @SerializeOptions({
-  //strategy: 'excludeAll'
-  excludePrefixes: ['_'],
+  strategy: 'excludeAll'
 })
 export class UserController {
   constructor(private readonly userService: UserService) {}

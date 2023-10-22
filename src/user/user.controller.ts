@@ -9,7 +9,6 @@ import {
   Post,
   SerializeOptions,
   UseInterceptors,
-  UsePipes,
 } from '@nestjs/common';
 import { GROUP_DETAILS, GROUP_LIST } from '../common/entities/user.entity';
 import { CreateContactDto } from './create-contact.dto';
@@ -48,10 +47,5 @@ export class UserController {
   @Post()
   async create(@Body() user: CreateUsersDto) {
     return await this.userService.createUser(user);
-  }
-
-  @Post('contact')
-  async createContact(@Body() contact: CreateContactDto) {
-    return await this.userService.createUserContact(contact);
   }
 }

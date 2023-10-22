@@ -15,9 +15,6 @@ export class AddressEntity {
   @Column()
   state: string;
 
-  @OneToOne(() => UserEntity, user => user.address)
-  user: UserEntity;
-  
   @CreateDateColumn()
   created_date: Date;
 

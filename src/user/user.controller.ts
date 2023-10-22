@@ -10,31 +10,23 @@ import {
   SerializeOptions,
   UseInterceptors,
 } from '@nestjs/common';
-import { GROUP_DETAILS, GROUP_LIST } from '../common/entities/user.entity';
-import { CreateContactDto } from './create-contact.dto';
 import { CreateUsersDto } from './create-user.dto';
 import { UserService } from './user.service';
 
 @Controller('user')
 @UseInterceptors(ClassSerializerInterceptor)
-@SerializeOptions({
-  strategy: 'excludeAll'
-})
+// @SerializeOptions({
+//   strategy: 'excludeAll'
+// })
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get()
-  @SerializeOptions({
-    groups: [GROUP_LIST],
-  })
   async getAll() {
     return await this.userService.getAll();
   }
 
   @Get(':id')
-  @SerializeOptions({
-    groups: [GROUP_DETAILS],
-  })
   async getById(@Param('id', ParseIntPipe) id: number) {
     const user = await this.userService.getById(id);
     if (!user) {

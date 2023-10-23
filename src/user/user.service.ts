@@ -33,11 +33,13 @@ export class UserService {
     userEntity.user_name = user.name;
     userEntity.email = user.email;
     userEntity.password = await bcrypt.hash(user.password, 10);
+    userEntity.pay_grade = user.payGrade;
     
     const newUserEntity = await this.userRepository.save(userEntity);
     return {
       name: newUserEntity.user_name,
       email: newUserEntity.email,
+      payGrade: newUserEntity.pay_grade,
       id: newUserEntity.id
     } as UserDto;
   }

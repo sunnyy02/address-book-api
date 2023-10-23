@@ -4,24 +4,27 @@ import {
   PrimaryGeneratedColumn,
   Column,
 } from 'typeorm';
+import { RoleConstant } from './role.constant';
 
-export const GROUP_DETAILS = 'group_details';
-export const GROUP_LIST = 'group_list';
 @Entity('user')
 export class UserEntity {
   @PrimaryGeneratedColumn()
-  //Expose()
+  @Expose({groups: [RoleConstant.Admin, RoleConstant.Editor, RoleConstant.Reader]})
   id: number;
 
   @Column()
- //@Expose()
+  @Expose({groups: [RoleConstant.Admin, RoleConstant.Editor, RoleConstant.Reader]})
   user_name: string;
 
   @Column()
-  //@Expose()
+  @Expose({groups: [RoleConstant.Admin, RoleConstant.Editor, RoleConstant.Reader]})
   email: string;
 
+  @Column({default: 'NA'})
+  @Expose({groups: [RoleConstant.Admin, RoleConstant.Editor]})
+  pay_grade: string;
+
   @Column()
-  @Exclude({ toPlainOnly: true })
+  @Expose({groups: [RoleConstant.Admin]})
   password: string;
 }

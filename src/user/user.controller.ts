@@ -12,12 +12,10 @@ import {
 } from '@nestjs/common';
 import { CreateUsersDto } from './create-user.dto';
 import { UserService } from './user.service';
+import { RoleConstant } from 'src/common/entities/role.constant';
 
 @Controller('user')
 @UseInterceptors(ClassSerializerInterceptor)
-// @SerializeOptions({
-//   strategy: 'excludeAll'
-// })
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
@@ -26,22 +24,29 @@ export class UserController {
     return await this.userService.getAll();
   }
 
-  @Get(':id')
-  async getById(@Param('id', ParseIntPipe) id: number) {
-    const user = await this.userService.getById(id);
-    if (!user) {
-      throw new NotFoundException('user not found');
-    }
-    return user;
+  @Get('admin/:id')
+  @SerializeOptions({
+    groups: [RoleConstant.Admin],
+  })
+  async getByAdmin(@Param('id', ParseIntPipe) id: number) {
+    return await this.userService.getById(id);
   }
 
-  @Get(':id/object')
-  async getByIdAsObject(@Param('id', ParseIntPipe) id: number) {
-    const user = await this.userService.getById(id);
-    if (!user) {
-      throw new NotFoundException('user not found');
-    }
-    return {...user};
+
+  @Get('editor/:id')
+  @SerializeOptions({
+    groups: [RoleConstant.Editor],
+  })
+  async getByEditor(@Param('id', ParseIntPipe) id: number) {
+    return await this.userService.getById(id);
+  }
+
+  @Get('reader/:id')
+  @SerializeOptions({
+    groups: [RoleConstant.Reader],
+  })
+  async getByReader(@Param('id', ParseIntPipe) id: number) {
+    return await this.userService.getById(id);
   }
 
   @Post()

@@ -4,7 +4,6 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { ResponseInterceptor } from './common/response.interceptor';
 import { HttpAddressExceptionFilter } from './http-exception.filter';
-import { CustomLogger } from './logger/custom-logger';
 
 declare const module: any;
 
@@ -14,7 +13,6 @@ async function bootstrap() {
     bufferLogs: true
   });
   
-  app.useLogger(app.get(CustomLogger));
   app.enableCors();
 
   const options = new DocumentBuilder()

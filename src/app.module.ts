@@ -4,9 +4,6 @@ import {
   NestModule,
   RequestMethod,
 } from '@nestjs/common';
-import { AddressBookModule } from './address-book/address-book.module';
-import { LoggerModule } from './logger/logger.module';
-import { LoggerMiddleware } from './logger.middleware';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CommonModule } from './common/common.module';
@@ -16,7 +13,6 @@ const configService = new ConfigService();
 
 @Module({
   imports: [
-    AddressBookModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV}`,
@@ -31,15 +27,10 @@ const configService = new ConfigService();
       autoLoadEntities: true,
       synchronize: configService.get('SYNCHRONIZE') === 'true',
     }),
-    LoggerModule,
     CommonModule,
     UserModule,
   ],
 })
 export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(LoggerMiddleware)
-      .forRoutes({ path: '*', method: RequestMethod.ALL });
-  }
+  configure() {}
 }

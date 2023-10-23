@@ -10,11 +10,11 @@ export const GROUP_LIST = 'group_list';
 @Entity('user')
 export class UserEntity {
   @PrimaryGeneratedColumn()
-  //@Expose()
+  //Expose()
   id: number;
 
   @Column()
-  //@Expose()
+ //@Expose()
   user_name: string;
 
   @Column()

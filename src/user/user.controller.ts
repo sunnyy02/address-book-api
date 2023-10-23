@@ -35,6 +35,15 @@ export class UserController {
     return user;
   }
 
+  @Get(':id/object')
+  async getByIdAsObject(@Param('id', ParseIntPipe) id: number) {
+    const user = await this.userService.getById(id);
+    if (!user) {
+      throw new NotFoundException('user not found');
+    }
+    return {...user};
+  }
+
   @Post()
   async create(@Body() user: CreateUsersDto) {
     return await this.userService.createUser(user);

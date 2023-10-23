@@ -25,18 +25,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
 
-  app.useGlobalPipes(
-    new ValidationPipe({
-      whitelist: true,
-      forbidNonWhitelisted: true,
-      forbidUnknownValues: false,
-      disableErrorMessages: false,
-      validationError: {
-        value: false,
-      },
-      transform: true
-    }),
-  );
   // app.useGlobalInterceptors(new ClassSerializerInterceptor(
   //   app.get(Reflector))
   // );

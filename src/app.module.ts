@@ -29,7 +29,7 @@ const configService = new ConfigService();
       password: configService.get('DATABASE_PASSWORD'),
       database: configService.get('DATABASE_NAME'),
       autoLoadEntities: true,
-      synchronize: configService.get('SYNCHRONIZE'),
+      synchronize: configService.get('SYNCHRONIZE') === 'true',
     }),
     LoggerModule,
     CommonModule,

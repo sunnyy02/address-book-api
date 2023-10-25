@@ -6,9 +6,9 @@ import { CacheTTL, CacheKey, CacheInterceptor } from '@nestjs/cache-manager';
 @UseInterceptors(CacheInterceptor)
 export class StateController {
   @Get()
-  @CacheTTL(20)
+  @CacheTTL(20000)
   getAllStates(): string[] {
-    console.log('GetAllStates called');
+    console.log(`GetAllStates called at: ${new Date().toISOString()}`);
     return ['ACT', 'QLD', 'NSW', 'SA', 'NT', 'TAS', 'VIC'];
   }
 }

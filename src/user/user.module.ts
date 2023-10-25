@@ -7,7 +7,13 @@ import { StateController } from './state.controller';
 import { CacheModule } from '@nestjs/cache-manager';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([UserEntity]), CacheModule.register()],
+  imports: [
+    TypeOrmModule.forFeature([UserEntity]),
+    CacheModule.register({
+      ttl: 5, // seconds
+      max: 100, // maximum number of items in cache
+    }),
+  ],
   controllers: [UserController, StateController],
   providers: [UserService],
   exports: [UserService],

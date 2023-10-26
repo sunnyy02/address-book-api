@@ -5,8 +5,6 @@ import {
   Column,
 } from 'typeorm';
 
-export const GROUP_DETAILS = 'group_details';
-export const GROUP_LIST = 'group_list';
 @Entity('user')
 export class UserEntity {
   @PrimaryGeneratedColumn()

@@ -2,11 +2,9 @@ import {
   HttpException,
   HttpStatus,
   Injectable,
-  NotFoundException,
-  UnauthorizedException,
 } from '@nestjs/common';
 import { UserService } from '../user/user.service';
-import { CreateUsersDto } from 'src/user/create-user.dto';
+import { CreateUsersDto } from '../user/create-user.dto';
 
 @Injectable()
 export class AuthService {

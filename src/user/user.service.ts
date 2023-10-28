@@ -4,6 +4,7 @@ import { UserEntity } from '../common/entities/user.entity';
 import { Repository } from 'typeorm';
 import { CreateUsersDto } from './create-user.dto';
 import { UserDto } from './user.dto';
+import * as bcrypt from 'bcrypt';
 @Injectable()
 export class UserService {
   constructor(
@@ -38,6 +39,7 @@ export class UserService {
     userEntity.user_name = user.name;
     userEntity.email = user.email;
     userEntity.password = user.password;
+    userEntity.password = await bcrypt.hash(user.password, 10);
     
     const newUserEntity = await this.userRepository.save(userEntity);
     return {

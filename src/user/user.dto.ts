@@ -12,12 +12,5 @@ export class UserDto {
     email: string;
     
     @IsString()
-    userId: string;
-
-    @IsString()
     password: string;
-    
-    @IsNumberString()
-    @IsOptional()
-    addressId: number;
 }

@@ -24,16 +24,11 @@ export class AuthService {
 
   async login(user: UserDto) {
     const existingUser = await this.userService.getByEmail(user.email);
-    if(!existingUser){
-      throw new HttpException('Invalid credential', HttpStatus.UNAUTHORIZED);
-    }
-    const hashedPassword = await bcrypt.hash(user.password, 10);
-    console.log('password compare', user.password, existingUser.password);
-    const isPasswordMatching = await bcrypt.compare(
-      user.password,
+    const passwordMatch = await bcrypt.compare(
+      user?.password,
       existingUser.password
     );
-    if(!isPasswordMatching){
+    if(!existingUser || !passwordMatch){
       throw new HttpException('Invalid credential', HttpStatus.UNAUTHORIZED);
     }
     const payload = { username: user.name, sub: user.id };

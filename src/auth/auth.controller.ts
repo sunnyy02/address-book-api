@@ -4,11 +4,15 @@ import {
   HttpCode,
   HttpStatus,
   Post,
+  Request,
   Res,
+  UseGuards,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { CreateUsersDto } from 'src/user/create-user.dto';
 import { UserDto } from 'src/user/user.dto';
+import { AuthGuard } from '@nestjs/passport';
+import { LocalAuthGuard } from './local-auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -21,8 +25,9 @@ export class AuthController {
     return res.json(newUser);
   }
 
+  @UseGuards(LocalAuthGuard)
   @Post('login')
-  async login(@Body() user: UserDto) {
-      return this.authService.login(user);
+  async login(@Request() req, @Body() user: UserDto) {
+      return req.user;
   }
 }

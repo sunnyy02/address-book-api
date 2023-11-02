@@ -9,16 +9,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CommonModule } from './common/common.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
-import { JwtModule } from '@nestjs/jwt';
+import { AddressModule } from './address/address.module';
 
 const configService = new ConfigService();
 
 @Module({
   imports: [
-    // ConfigModule.forRoot({
-    //   isGlobal: true,
-    //   envFilePath: `.env.${process.env.NODE_ENV}`,
-    // }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: configService.get('DATABASE_HOST'),
@@ -32,6 +28,7 @@ const configService = new ConfigService();
     CommonModule,
     UserModule,
     AuthModule,
+    AddressModule,
   ],
 })
 export class AppModule implements NestModule {

@@ -8,16 +8,15 @@ import {
   ParseIntPipe,
   Post,
   SerializeOptions,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import { CreateUsersDto } from './create-user.dto';
 import { UserService } from './user.service';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('user')
 @UseInterceptors(ClassSerializerInterceptor)
-// @SerializeOptions({
-//   strategy: 'excludeAll'
-// })
 export class UserController {
   constructor(private readonly userService: UserService) {}
 

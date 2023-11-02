@@ -5,6 +5,7 @@ import { Repository } from 'typeorm';
 import { CreateUsersDto } from './create-user.dto';
 import { UserDto } from './user.dto';
 import * as bcrypt from 'bcrypt';
+
 @Injectable()
 export class UserService {
   constructor(
@@ -12,7 +13,7 @@ export class UserService {
     private userRepository: Repository<UserEntity>,
   ) {}
 
-  async getAll(){
+  async getAll() {
     return await this.userRepository.find();
   }
 
@@ -28,25 +29,17 @@ export class UserService {
     });
   }
 
-  async getByUserId(userId: string) {
-    return await this.userRepository.findOne({
-      where: { email: userId },
-    });
-  }
-
   async createUser(user: CreateUsersDto) {
     const userEntity = new UserEntity();
     userEntity.user_name = user.name;
     userEntity.email = user.email;
-    userEntity.password = user.password;
     userEntity.password = await bcrypt.hash(user.password, 10);
-    
+
     const newUserEntity = await this.userRepository.save(userEntity);
     return {
       name: newUserEntity.user_name,
       email: newUserEntity.email,
-      id: newUserEntity.id
+      id: newUserEntity.id,
     } as UserDto;
   }
-
 }

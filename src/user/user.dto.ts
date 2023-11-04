@@ -1,5 +1,6 @@
 import { Optional } from "@nestjs/common";
 import { IsNumberString, IsNotEmpty, IsArray, isString, IsString, IsEmail, IsOptional } from "class-validator";
+import { RoleDto } from "./role.dto";
 
 export class UserDto {
     @IsNumberString()
@@ -13,4 +14,7 @@ export class UserDto {
     
     @IsString()
     password: string;
+
+    @IsArray()
+    roles: RoleDto[];
 }

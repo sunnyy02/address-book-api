@@ -3,8 +3,12 @@ import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { RoleGuard } from 'src/auth/role.guard';
+import { Roles } from '../common/role.decorator';
+import { Role } from '../common/role.enum';
 
-@UseGuards(JwtAuthGuard)
+@Roles(Role.Writer)
+@UseGuards(JwtAuthGuard, RoleGuard)
 @Controller('address')
 export class AddressController {
     constructor(private readonly addressService: AddressService) {}

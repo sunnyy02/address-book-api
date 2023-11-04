@@ -1,18 +1,23 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, Delete, UseGuards } from '@nestjs/common';
 import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
+import { AuthGuard } from '../common/auth.guard';
+import { AdminGuard } from '../common/admin.guard';
 
 @Controller('address')
+@UseGuards(AuthGuard, AdminGuard)
 export class AddressController {
     constructor(private readonly addressService: AddressService) {}
 
     @Get(':id')
+    //@UseGuards(AuthGuard)
     getById(@Param('id', ParseIntPipe) id: number) {
         return this.addressService.getById(id);
     }
 
     @Post()
+    //@UseGuards(AuthGuard)
     create(@Body() address: CreateAddressDto) {
         return this.addressService.create(address);
     }

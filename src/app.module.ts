@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AddressBookModule } from './address-book/address-book.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
-  imports: [AddressBookModule],
+  imports: [AddressBookModule, CommonModule],
   controllers: [],
   providers: [],
 })

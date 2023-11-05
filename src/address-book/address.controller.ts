@@ -6,7 +6,8 @@ import { AuthGuard } from '../common/auth.guard';
 import { AdminGuard } from '../common/admin.guard';
 
 @Controller('address')
-@UseGuards(AuthGuard, AdminGuard)
+@UseGuards(AuthGuard)
+//@UseGuards(AuthGuard, AdminGuard)
 export class AddressController {
     constructor(private readonly addressService: AddressService) {}
 
@@ -17,7 +18,7 @@ export class AddressController {
     }
 
     @Post()
-    //@UseGuards(AuthGuard)
+    @UseGuards(AuthGuard, AdminGuard)
     create(@Body() address: CreateAddressDto) {
         return this.addressService.create(address);
     }

@@ -14,9 +14,9 @@ export class AddressController {
 
     @Roles(Role.Reader, Role.Writer,Role.Admin)
     @UseGuards(RoleGuard)
-    @Get(':id')
-    getById(@Param('id', ParseIntPipe) id: number) {
-        return this.addressService.getById(id);
+    @Get()
+    getAll() {
+        return this.addressService.getAll();
     }
 
     @Roles(Role.Writer,Role.Admin)

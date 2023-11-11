@@ -7,7 +7,6 @@ import {
   Post,
   Put,
   Delete,
-  ParseArrayPipe,
   UsePipes,
   Query,
   UseFilters,
@@ -42,6 +41,7 @@ export class AddressController {
   // address?id=1
   @Get()
   search(@Query() idParam: AddressIdParam) {
+    this.logger.log(`Address search is called with parameter: ${JSON.stringify(idParam)}`);
     return this.addressService.getById(idParam.id);
   }
 

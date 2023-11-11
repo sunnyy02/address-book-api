@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: ['error', 'warn', 'debug', 'log', 'verbose'],
   });
-  
+
   app.enableCors();
 
   const options = new DocumentBuilder()
@@ -29,7 +29,7 @@ async function bootstrap() {
       validationError: {
         value: false,
       },
-      transform: true
+      transform: true,
     }),
   );
 

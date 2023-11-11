@@ -31,7 +31,7 @@ export class AddressController {
   getById(@Param('id', ParseIntPipe) id: number) {
     const address = this.addressService.getById(id);
     if (!address) {
-        this.logger.debug(`Address not found for id:${id}`);
+      this.logger.debug(`Address not found for id:${id}`);
       throw new NotFoundException('Address not found');
     }
     this.logger.verbose(`Address is found for id: ${id}`);
@@ -41,7 +41,9 @@ export class AddressController {
   // address?id=1
   @Get()
   search(@Query() idParam: AddressIdParam) {
-    this.logger.log(`Address search is called with parameter: ${JSON.stringify(idParam)}`);
+    this.logger.log(
+      `Address search is called with parameter: ${JSON.stringify(idParam)}`,
+    );
     return this.addressService.getById(idParam.id);
   }
 

@@ -7,12 +7,10 @@ import {
   Post,
   Put,
   Delete,
-  ParseArrayPipe,
   UsePipes,
   Query,
   UseFilters,
   NotFoundException,
-  Logger,
 } from '@nestjs/common';
 import { AddressIdParam } from './address-id-param';
 import { HttpAddressExceptionFilter } from '../http-exception.filter';
@@ -26,7 +24,6 @@ import { CustomLogger } from 'src/logger/custom-logger';
 @Controller('address')
 @UseFilters(new HttpAddressExceptionFilter())
 export class AddressController {
-  //private logger = new Logger('AddressController');
   constructor(
     private readonly addressService: AddressService,
     private readonly customLogger: CustomLogger,
@@ -35,7 +32,6 @@ export class AddressController {
   }
 
   @Get(':id')
-  //@UseFilters(HttpExceptionFilter)
   getById(@Param('id', ParseIntPipe) id: number) {
     const address = this.addressService.getById(id);
     if (!address) {
@@ -61,14 +57,6 @@ export class AddressController {
       throw new DuplicateAddressException(address.addressLine);
     }
     return this.addressService.create(address);
-  }
-
-  @Post()
-  createAddressByBatch(
-    @Body(new ParseArrayPipe({ items: CreateAddressDto }))
-    createAddressDtos: CreateAddressDto[],
-  ) {
-    // implement the create a batch of addresses
   }
 
   @Put(':id')

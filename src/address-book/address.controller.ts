@@ -21,26 +21,21 @@ import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
 import { DuplicateAddressException } from './duplicate-address-exception';
-import { CustomLogger } from 'src/logger/custom-logger';
 
 @Controller('address')
 @UseFilters(new HttpAddressExceptionFilter())
 export class AddressController {
-  //private logger = new Logger('AddressController');
-  constructor(
-    private readonly addressService: AddressService,
-    private readonly customLogger: CustomLogger,
-  ) {
-    this.customLogger.log('AddressController initialized!');
-  }
+  private logger = new Logger('AddressController');
+  constructor(private readonly addressService: AddressService) {}
 
   @Get(':id')
-  //@UseFilters(HttpExceptionFilter)
   getById(@Param('id', ParseIntPipe) id: number) {
     const address = this.addressService.getById(id);
     if (!address) {
+        this.logger.debug(`Address not found for id:${id}`);
       throw new NotFoundException('Address not found');
     }
+    this.logger.verbose(`Address is found for id: ${id}`);
     return address;
   }
 
@@ -57,18 +52,11 @@ export class AddressController {
       address.addressLine,
     );
     if (existingAddress) {
-      this.customLogger.warn('duplicated address');
+      this.logger.warn('duplicated address');
       throw new DuplicateAddressException(address.addressLine);
     }
-    return this.addressService.create(address);
-  }
-
-  @Post()
-  createAddressByBatch(
-    @Body(new ParseArrayPipe({ items: CreateAddressDto }))
-    createAddressDtos: CreateAddressDto[],
-  ) {
-    // implement the create a batch of addresses
+    const newAddress = this.addressService.create(address);
+    return newAddress;
   }
 
   @Put(':id')

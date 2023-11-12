@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { AddressDto } from './address.dto';
 import { AddressEntity } from './address.entity';
 import { CreateAddressDto } from './create-address.dto';
+import { DuplicateAddressException } from './duplicate-address-exception';
 
 @Injectable()
 export class AddressService {
@@ -31,6 +32,12 @@ export class AddressService {
   }
 
   async create(address: CreateAddressDto) {
+    const existingAddress = this.addressRepository.findOne({
+      where: { address_line: address.addressLine },
+    });
+    if (existingAddress) {
+      throw new DuplicateAddressException(address.addressLine);
+    }
     const entity = new AddressEntity();
     entity.address_line = address.addressLine;
     entity.state = address.state;

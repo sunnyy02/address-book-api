@@ -14,20 +14,17 @@ import {
   NotFoundException,
   Logger,
 } from '@nestjs/common';
-import { ApiParam } from '@nestjs/swagger';
 import { AddressIdParam } from './address-id-param';
 import { HttpAddressExceptionFilter } from '../http-exception.filter';
 import { AddressValidationPipe } from './address-validation.pipe';
 import { AddressDto } from './address.dto';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
-import { DuplicateAddressException } from './duplicate-address-exception';
 import { CustomLogger } from '../logger/custom-logger';
 
 @Controller('address')
 @UseFilters(new HttpAddressExceptionFilter())
 export class AddressController {
-  //private logger = new Logger('AddressController');
   constructor(
     private readonly addressService: AddressService,
     private customLogger: CustomLogger,
@@ -36,7 +33,6 @@ export class AddressController {
   }
 
   @Get(':id')
-  //@UseFilters(HttpExceptionFilter)
   getById(@Param('id', ParseIntPipe) id: number) {
     const address = this.addressService.getById(id);
     if (!address) {
@@ -54,22 +50,7 @@ export class AddressController {
   @Post()
   @UsePipes(AddressValidationPipe)
   async create(@Body() address: CreateAddressDto) {
-    var existingAddress = this.addressService.getByAddressLine(
-      address.addressLine,
-    );
-    if (existingAddress) {
-      this.customLogger.warn('duplicated address');
-      throw new DuplicateAddressException(address.addressLine);
-    }
     return await this.addressService.create(address);
-  }
-
-  @Post()
-  async createAddressByBatch(
-    @Body(new ParseArrayPipe({ items: CreateAddressDto }))
-    createAddressDtos: CreateAddressDto[],
-  ) {
-    // implement the create a batch of addresses
   }
 
   @Put(':id')

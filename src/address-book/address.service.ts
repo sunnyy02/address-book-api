@@ -32,7 +32,7 @@ export class AddressService {
   }
 
   async create(address: CreateAddressDto) {
-    const existingAddress = this.addressRepository.findOne({
+    const existingAddress = await this.addressRepository.findOne({
       where: { address_line: address.addressLine },
     });
     if (existingAddress) {
@@ -43,7 +43,7 @@ export class AddressService {
     entity.state = address.state;
     entity.post_code = address.postCode.toString();
 
-    await this.addressRepository.save(entity);
+   return await this.addressRepository.save(entity);
   }
 
   update(id: number, address: AddressDto): void {

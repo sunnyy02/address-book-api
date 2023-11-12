@@ -14,13 +14,11 @@ import {
   NotFoundException,
   Logger,
 } from '@nestjs/common';
-import { ApiParam } from '@nestjs/swagger';
 import { AddressIdParam } from './address-id-param';
 import { HttpAddressExceptionFilter } from '../http-exception.filter';
 import { AddressValidationPipe } from './address-validation.pipe';
 import { AddressService } from './address.service';
 import { CreateAddressDto } from './create-address.dto';
-import { DuplicateAddressException } from './duplicate-address-exception';
 import { CustomLogger } from '../logger/custom-logger';
 import { UpdateAddressDto } from './update-address.dto';
 
@@ -51,13 +49,6 @@ export class AddressController {
   @Post()
   @UsePipes(AddressValidationPipe)
   async create(@Body() address: CreateAddressDto) {
-    var existingAddress = await this.addressService.getByAddressLine(
-      address.addressLine,
-    );
-    if (existingAddress?.length > 0) {
-      this.customLogger.warn('duplicated address');
-      throw new DuplicateAddressException(address.addressLine);
-    }
     return await this.addressService.create(address);
   }
 

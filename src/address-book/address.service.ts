@@ -1,9 +1,10 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AddressEntity } from './address.entity';
 import { CreateAddressDto } from './create-address.dto';
 import { UpdateAddressDto } from './update-address.dto';
+import { DuplicateAddressException } from './duplicate-address-exception';
 
 @Injectable()
 export class AddressService {
@@ -25,20 +26,28 @@ export class AddressService {
   }
 
   async create(address: CreateAddressDto) {
+    const existingAddress = await this.addressRepository.findOne({
+      where: { address_line: address.addressLine },
+    });
+    if (existingAddress) {
+      throw new DuplicateAddressException(address.addressLine);
+    }
     const entity = new AddressEntity();
     entity.address_line = address.addressLine;
     entity.state = address.state;
     entity.post_code = address.postCode.toString();
 
-    await this.addressRepository.save(entity);
+   return await this.addressRepository.save(entity);
   }
 
   async update(id: number, address: UpdateAddressDto) {
     const existingEntity = await this.getById(id);
+    if (!existingEntity) {
+      throw new HttpException('Incorrect address id', HttpStatus.BAD_REQUEST);
+    }
     existingEntity.address_line = address.addressLine;
     existingEntity.post_code = address.postCode.toString();
     existingEntity.state = address.state;
-    console.log('existing:', existingEntity);
     return this.addressRepository.save(existingEntity);
   }
 

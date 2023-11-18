@@ -38,7 +38,6 @@ export class UserService {
     const userEntity = new UserEntity();
     userEntity.user_name = user.name;
     userEntity.email = user.email;
-    userEntity.password = user.password;
     userEntity.password = await bcrypt.hash(user.password, 10);
     
     const newUserEntity = await this.userRepository.save(userEntity);

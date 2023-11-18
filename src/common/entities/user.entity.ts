@@ -38,10 +38,4 @@ export class UserEntity {
   })
   @JoinTable()
   roles: RoleEntity[];
-
-  @CreateDateColumn()
-  created_date: Date;
-
-  @UpdateDateColumn()
-  updated_date: Date;
 }

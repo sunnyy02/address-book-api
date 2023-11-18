@@ -17,6 +17,6 @@ export class UserEntity {
   email: string;
 
   @Column()
-  @Exclude({ toPlainOnly: true })
+  //@Exclude({ toPlainOnly: true })
   password: string;
 }

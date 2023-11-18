@@ -26,7 +26,7 @@ const config = {
   const {autoLoadEntities,synchronize ,...configWithAutoLoad} = config;
   const migrationConfig = {
     ...configWithAutoLoad,
-    migrations: [InitDatabase1692783883190, AddUserCreateUpdateDate1692787291172],
+    migrations: [],
     entities: [AddressEntity, UserEntity, ContactEntity, RoleEntity, StateEntity]
   };
   export default registerAs('OrmConfig', ()=> config );

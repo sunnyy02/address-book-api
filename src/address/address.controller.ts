@@ -9,9 +9,9 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 export class AddressController {
     constructor(private readonly addressService: AddressService) {}
 
-    @Get(':id')
-    getById(@Param('id', ParseIntPipe) id: number) {
-        return this.addressService.getById(id);
+    @Get()
+    getAll() {
+        return this.addressService.getAll();
     }
 
     @Post()

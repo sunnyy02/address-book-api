@@ -4,7 +4,7 @@ import { CreateAddressDto } from './create-address.dto';
 
 @Injectable()
 export class AddressService {
-  private addressDataStore: AddressDto[] = [
+  addressDataStore: AddressDto[] = [
     {
       id: 1,
       addressLine: '123 Queen street',
@@ -27,17 +27,22 @@ export class AddressService {
       this.addressDataStore.length === 0
         ? 0
         : Math.max(...this.addressDataStore.map((t) => t.id));
-    const newAddress = { ...address, id: id + 1, createdDate: new Date() } as AddressDto;
+    const newAddress = {
+      ...address,
+      id: id + 1,
+      createdDate: new Date(),
+    } as AddressDto;
     this.addressDataStore.push(newAddress);
+    return newAddress;
   }
-  
+
   update(id: number, address: AddressDto): void {
-    const index = this.addressDataStore.findIndex( x => x.id === id);
+    const index = this.addressDataStore.findIndex((x) => x.id === id);
     this.addressDataStore[index] = address;
   }
 
   delete(id: number) {
-    const index = this.addressDataStore.findIndex( x => x.id === id);
+    const index = this.addressDataStore.findIndex((x) => x.id === id);
     this.addressDataStore.splice(index, 1);
   }
 }

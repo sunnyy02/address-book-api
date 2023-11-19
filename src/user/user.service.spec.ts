@@ -1,18 +1,107 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UserService } from './user.service';
+import { UserEntity } from '../common/entities/user.entity';
+import { Repository } from 'typeorm';
+import { getRepositoryToken } from '@nestjs/typeorm';
+import { CreateUsersDto } from './create-user.dto';
+import { UserDto } from './user.dto';
+import { HttpException, HttpStatus } from '@nestjs/common';
+import { MockUserEntityRepository } from '../../test/mocks/MockUserEntityRepository';
+
+// Mock data
+const mockUsers = [
+  {
+    id: 1,
+    user_name: 'User1',
+    email: 'user1@example.com',
+    password: 'password1',
+  },
+  {
+    id: 2,
+    user_name: 'User2',
+    email: 'user2@example.com',
+    password: 'password2',
+  },
+];
 
 describe('UserService', () => {
   let service: UserService;
-
+  let mockUserRepository: Repository<UserEntity>;
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [UserService],
+      providers: [
+        UserService,
+        {
+          provide: getRepositoryToken(UserEntity),
+          useClass: MockUserEntityRepository,
+        },
+      ],
     }).compile();
 
     service = module.get<UserService>(UserService);
+    mockUserRepository = module.get(getRepositoryToken(UserEntity));
   });
 
   it('should be defined', () => {
     expect(service).toBeDefined();
+  });
+
+  it('should find a user', async () => {
+    const userId = 1;
+    jest.spyOn(mockUserRepository, 'findOne').mockResolvedValue(mockUsers[0]);
+    const result = await service.getById(userId);
+
+    expect(mockUserRepository.findOne).toHaveBeenCalled();
+    expect(result).toEqual(mockUsers[0]);
+  });
+
+  it('should create a user', async () => {
+    const createUserDto = {
+      name: mockUsers[0].user_name,
+      email: mockUsers[0].email,
+      password: mockUsers[0].password,
+    } as CreateUsersDto;
+
+    const expectedUser = {
+      id: 1,
+      name: mockUsers[0].user_name,
+      email: mockUsers[0].email,
+    } as UserDto;
+    jest.spyOn(mockUserRepository, 'save').mockResolvedValue(mockUsers[0]);
+    jest.spyOn(mockUserRepository, 'findOne').mockResolvedValue(null);
+
+    const result = await service.createUser(createUserDto);
+    expect(mockUserRepository.save).toHaveBeenCalled();
+    expect(result).toEqual(expectedUser);
+  });
+
+  it('should return a user by email', async () => {
+    const userEmail = 'user1@example.com';
+    jest.spyOn(mockUserRepository, 'findOne').mockResolvedValue(mockUsers[0]);
+
+    const result = await service.getByEmail(userEmail);
+    expect(result).toEqual(mockUsers[0]);
+    expect(mockUserRepository.findOne).toHaveBeenCalledWith({
+      where: { email: userEmail },
+    });
+  });
+
+  it('should createUser return 409 exception when email supplied already exist', async () => {
+    const createUserDto = {
+      name: 'John',
+      email: 'John@gmail.com',
+      password: '123',
+    } as CreateUsersDto;
+
+    jest.spyOn(mockUserRepository, 'save').mockResolvedValue(mockUsers[0]);
+    jest.spyOn(mockUserRepository, 'findOne').mockResolvedValue(mockUsers[0]);
+
+    await expect(service.createUser(createUserDto)).rejects.toThrowError(
+      new HttpException('The email is already be used', HttpStatus.CONFLICT),
+    );
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 });

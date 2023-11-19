@@ -4,11 +4,10 @@ import { UserEntity } from '../common/entities/user.entity';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import { CacheModule } from '@nestjs/cache-manager';
-import { RoleEntity } from 'src/common/entities/role.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([UserEntity, RoleEntity]),
+    TypeOrmModule.forFeature([UserEntity]),
     CacheModule.register({
       ttl: 5000, // ms
       max: 100, // maximum number of items in cache

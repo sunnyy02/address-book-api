@@ -6,7 +6,6 @@ import {
   JoinTable,
   ManyToMany,
 } from 'typeorm';
-import { RoleEntity } from './role.entity';
 
 @Entity('user')
 export class UserEntity {
@@ -22,11 +21,4 @@ export class UserEntity {
   @Column()
   @Exclude({ toPlainOnly: true })
   password: string;
-
-  @ManyToMany(() => RoleEntity, (role) => role.users, {
-    eager: true,
-    cascade: ['insert', 'update'],
-  })
-  @JoinTable()
-  roles: RoleEntity[];
 }

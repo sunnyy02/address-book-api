@@ -1,22 +1,36 @@
-import { Math } from "./math";
+import { add } from './math';
 
-describe('Math', () => {
-  let math: Math;
+describe('Math Utility', () => {
+  it('should add two numbers correctly', () => {
+    const a = 3;
+    const b = 7;
 
-  beforeEach(() => {
-    // Arrange: Create a new instance of the Math before each test
-    math = new Math();
+    const result = add(a, b);
+
+    expect(result).toEqual({ sum: 10, operands: [3, 7] });
+    expect(result.sum).toBe(10);
+    expect(result.operands).toContain(3);
   });
 
-  it('should subtract two numbers', () => {
-    // Arrange: Set up the input values
-    const a = 7;
-    const b = 4;
 
-    // Act: Call the method under test
-    const result = math.subtract(a, b);
+  it('should handle negative numbers', () => {
+    const a = -5;
+    const b = 3;
 
-    // Assert: Verify the result
-    expect(result).toBe(3);
+    const result = add(a, b);
+
+    expect(result).toEqual({ sum: -2, operands: [-5, 3] });
+    expect(result.sum).toBeLessThan(0);
+    expect(result.operands).toHaveLength(2);
+  });
+
+  it('should correctly add floating-point numbers', () => {
+    const a = 0.1;
+    const b = 0.2;
+
+    const result = add(a, b);
+
+    expect(result.sum).toBeCloseTo(0.3, 5);
+    expect(result.operands).toContain(0.1);
   });
 });

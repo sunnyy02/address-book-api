@@ -6,6 +6,7 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { CreateUsersDto } from './create-user.dto';
 import { UserDto } from './user.dto';
 import { HttpException, HttpStatus } from '@nestjs/common';
+import exp from 'constants';
 
 // Mock data
 const mockUsers = [
@@ -61,6 +62,17 @@ describe('UserService', () => {
     expect(result).toEqual(mockUsers[0]);
   });
 
+  it('should return a user by email', async () => {
+    const userEmail = 'user1@example.com';
+    jest.spyOn(mockRepository, 'findOne').mockResolvedValue(mockUsers[0]);
+
+    const result = await service.getByEmail(userEmail);
+    expect(result).toEqual(mockUsers[0]);
+    expect(mockRepository.findOne).toHaveBeenCalledWith({
+      where: { email: userEmail },
+    });
+  });
+
   it('should create a user', async () => {
     const createUserDto = {
       name: mockUsers[0].user_name,
@@ -81,16 +93,6 @@ describe('UserService', () => {
     expect(result).toEqual(expectedUser);
   });
 
-  it('should return a user by email', async () => {
-    const userEmail = 'user1@example.com';
-    jest.spyOn(mockRepository, 'findOne').mockResolvedValue(mockUsers[0]);
-
-    const result = await service.getByEmail(userEmail);
-    expect(result).toEqual(mockUsers[0]);
-    expect(mockRepository.findOne).toHaveBeenCalledWith({
-      where: { email: userEmail },
-    });
-  });
 
   it('should createUser return 409 exception when email supplied already exist', async () => {
     const createUserDto = {
@@ -105,6 +107,30 @@ describe('UserService', () => {
     await expect(service.createUser(createUserDto)).rejects.toThrowError(
       new HttpException('The email is already be used', HttpStatus.CONFLICT),
     );
+  });
+
+  it('should update a user', async () => {
+    const userDto = {
+      id: 1,
+      name: 'new name',
+      email: 'newemail@gmail.com',
+    } as UserDto;
+
+    jest.spyOn(mockRepository, 'save').mockResolvedValue(mockUsers[0]);
+    jest.spyOn(mockRepository, 'findOne').mockResolvedValue(mockUsers[0]);
+
+    const result = await service.update(1, userDto);
+    expect(mockRepository.save).toHaveBeenCalled();
+    expect(result.user_name).toEqual('new name');
+    expect(result.email).toEqual('newemail@gmail.com');
+  });
+
+  it('should delete a user', async () => {
+    jest.spyOn(mockRepository, 'delete').mockResolvedValue(null);
+
+    const result = await service.delete(1);
+    expect(mockRepository.delete).toHaveBeenCalled();
+    expect(mockRepository.delete).toHaveBeenCalledWith(1);
   });
 
   afterEach(() => {

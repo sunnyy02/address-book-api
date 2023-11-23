@@ -30,7 +30,6 @@ export class UserService {
   }
 
   async createUser(user: CreateUsersDto) {
-
     const existinguser = await this.getByEmail(user.email);
     if (!!existinguser) {
       throw new HttpException('The email is already be used', HttpStatus.CONFLICT);
@@ -46,5 +45,17 @@ export class UserService {
       email: newUserEntity.email,
       id: newUserEntity.id,
     } as UserDto;
+  }
+
+  async update(id: number, user: UserDto) {
+    const userEntity = await this.getById(id);
+    userEntity.user_name = user.name;
+    userEntity.email = user.email;
+
+    return await this.userRepository.save(userEntity);
+  }
+
+  async delete(id: number) {
+    return await this.userRepository.delete(id);
   }
 }

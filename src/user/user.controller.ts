@@ -2,11 +2,13 @@ import {
   Body,
   ClassSerializerInterceptor,
   Controller,
+  Delete,
   Get,
   NotFoundException,
   Param,
   ParseIntPipe,
   Post,
+  Put,
   SerializeOptions,
   UseGuards,
   UseInterceptors,
@@ -14,6 +16,7 @@ import {
 import { CreateUsersDto } from './create-user.dto';
 import { UserService } from './user.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { UserDto } from './user.dto';
 
 @Controller('user')
 @UseInterceptors(ClassSerializerInterceptor)
@@ -46,5 +49,15 @@ export class UserController {
   @Post()
   async create(@Body() user: CreateUsersDto) {
     return await this.userService.createUser(user);
+  }
+
+  @Put(':id')
+  async update(@Param('id', ParseIntPipe) id: number, @Body() user: UserDto) {
+    return await this.userService.update(id, user);
+  }
+
+  @Delete(':id')
+  async delete(@Param('id', ParseIntPipe) id: number) {
+    return await this.userService.delete(id);
   }
 }

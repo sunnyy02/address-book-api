@@ -49,6 +49,9 @@ export class UserService {
 
   async update(id: number, user: UserDto) {
     const userEntity = await this.getById(id);
+    if (!userEntity) {
+      throw new HttpException('the user does not exist', HttpStatus.NOT_FOUND);
+    }
     userEntity.user_name = user.name;
     userEntity.email = user.email;
 

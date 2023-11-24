@@ -1,15 +1,12 @@
 import {
-  MiddlewareConsumer,
   Module,
   NestModule,
-  RequestMethod,
 } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CommonModule } from './common/common.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
-import { AddressModule } from './address/address.module';
 
 const configService = new ConfigService();
 
@@ -28,7 +25,6 @@ const configService = new ConfigService();
     CommonModule,
     UserModule,
     AuthModule,
-    AddressModule,
   ],
 })
 export class AppModule implements NestModule {

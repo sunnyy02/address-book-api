@@ -13,8 +13,7 @@ export class UserDto {
     email: string;
     
     @IsString()
+    @IsOptional()
     password: string;
 
-    @IsArray()
-    roles: RoleDto[];
 }

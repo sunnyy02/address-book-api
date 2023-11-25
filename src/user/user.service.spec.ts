@@ -93,7 +93,6 @@ describe('UserService', () => {
     expect(result).toEqual(expectedUser);
   });
 
-
   it('should createUser return 409 exception when email supplied already exist', async () => {
     const createUserDto = {
       name: 'John',
@@ -126,11 +125,16 @@ describe('UserService', () => {
   });
 
   it('should delete a user', async () => {
-    jest.spyOn(mockRepository, 'delete').mockResolvedValue(null);
+    const deleteResult = {
+      raw: [],
+      affected: 1,
+    };
+
+    jest.spyOn(mockRepository, 'delete').mockResolvedValue(deleteResult);
 
     const result = await service.delete(1);
-    expect(mockRepository.delete).toHaveBeenCalled();
     expect(mockRepository.delete).toHaveBeenCalledWith(1);
+    expect(result).toEqual(deleteResult);
   });
 
   afterEach(() => {

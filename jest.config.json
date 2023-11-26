@@ -1,0 +1,16 @@
+{
+  "rootDir": "src",
+  "testRegex": ".*\\.spec\\.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "testEnvironment": "node",
+  "collectCoverageFrom": ["**/*.(t|j)s", "!**/*.(dto|entity|enum).ts", "!**/*.module.ts", "!*.module.ts"],
+  "coverageDirectory": "../coverage",
+  "collectCoverage": true,
+  "coverageThreshold": {
+    "global": {
+      "lines": 80
+    }
+  }
+}

@@ -1,4 +1,3 @@
-// response.interceptor.spec.ts
 import { Test, TestingModule } from '@nestjs/testing';
 import { ResponseInterceptor } from './response.interceptor';
 import { ExecutionContext, CallHandler } from '@nestjs/common';

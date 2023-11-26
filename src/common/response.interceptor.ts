@@ -6,7 +6,6 @@ import { convertCamel } from './convert-camel';
 export class ResponseInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const reqObj = context.switchToHttp().getRequest();
-    console.log(reqObj.body,'=>', convertCamel(reqObj.body))
     reqObj.body = convertCamel(reqObj.body);
 
     return next.handle().pipe(

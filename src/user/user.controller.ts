@@ -9,13 +9,10 @@ import {
   ParseIntPipe,
   Post,
   Put,
-  SerializeOptions,
-  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import { CreateUsersDto } from './create-user.dto';
 import { UserService } from './user.service';
-import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { UserDto } from './user.dto';
 
 @Controller('user')

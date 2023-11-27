@@ -5,7 +5,7 @@
     "^.+\\.(t|j)s$": "ts-jest"
   },
   "testEnvironment": "node",
-  "collectCoverageFrom": ["**/*.(t|j)s", "!**/*.(dto|entity|enum).ts", "!**/*.module.ts", "!*.module.ts"],
+  "collectCoverageFrom": ["**/*.(t|j)s", "!**/*.(dto|entity|enum).ts", "!**/*module.ts"],
   "coverageDirectory": "../coverage",
   "collectCoverage": true,
   "coverageThreshold": {

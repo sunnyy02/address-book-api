@@ -39,12 +39,7 @@ export class UserService {
     userEntity.email = user.email;
     userEntity.password = await bcrypt.hash(user.password, 10);
 
-    const newUserEntity = await this.userRepository.save(userEntity);
-    return {
-      name: newUserEntity.user_name,
-      email: newUserEntity.email,
-      id: newUserEntity.id,
-    } as UserDto;
+    return await this.userRepository.save(userEntity);
   }
 
   async update(id: number, user: UserDto) {

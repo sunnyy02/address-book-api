@@ -24,9 +24,9 @@ const config = {
     // we set it to false in the .env.dev file
   };
 
-  const {autoLoadEntities,synchronize ,...configWithAutoLoad} = config;
+  const {autoLoadEntities,synchronize ,...otherOrmConfigs} = config;
   const migrationConfig = {
-    ...configWithAutoLoad,
+    ...otherOrmConfigs,
     migrations: [],
     entities: [AddressEntity, UserEntity, ContactEntity, RoleEntity, StateEntity]
   };

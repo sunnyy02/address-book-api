@@ -19,14 +19,17 @@ const config = {
     password: `${process.env.DATABASE_PASSWORD}`,
     database: `${process.env.DATABASE_NAME}`,
     autoLoadEntities: true,
-    synchronize: false, //`${process.env.SYNCHRONIZE}`,
+    synchronize: `${process.env.SYNCHRONIZE}` === 'true',
+    // we set it to false in the .env.dev file
   };
 
-  const {autoLoadEntities,synchronize ,...configWithAutoLoad} = config;
+  const {autoLoadEntities,synchronize ,...otherConfigs} = config;
   const migrationConfig = {
-    ...configWithAutoLoad,
+    ...otherConfigs,
     migrations: [InitDatabase1692783883190],
-    entities: [AddressEntity, UserEntity, ContactEntity, RoleEntity, StateEntity]
+    entities: [AddressEntity, UserEntity, ContactEntity,
+               RoleEntity, StateEntity]
   };
   export default registerAs('OrmConfig', ()=> config );
-  export const connectionSource = new DataSource(migrationConfig as DataSourceOptions);
+  export const connectionSource = 
+      new DataSource(migrationConfig as DataSourceOptions);

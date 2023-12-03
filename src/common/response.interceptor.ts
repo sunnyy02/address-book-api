@@ -30,7 +30,7 @@ export class ResponseInterceptor implements NestInterceptor {
       );
     }
 
-    // If request or its body is not present, proceed without modification
+    // If request or its body is empty, return original observable
     return next.handle();
   }
 }

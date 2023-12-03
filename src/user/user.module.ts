@@ -10,8 +10,8 @@ import { CacheModule } from '@nestjs/cache-manager';
   imports: [
     TypeOrmModule.forFeature([UserEntity]),
     CacheModule.register({
-      ttl: 5000, // ms
-      max: 100, // maximum number of items in cache
+      ttl: 10000, // ms
+      max: 200, // maximum number of items in cache
     }),
   ],
   controllers: [UserController, StateController],

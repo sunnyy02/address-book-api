@@ -26,8 +26,9 @@ export class AuthController {
   }
 
   @UseGuards(LocalAuthGuard)
+  @HttpCode(HttpStatus.OK)
   @Post('login')
   async login(@Request() req, @Body() user: UserDto) {
-      return req.user;
+    return req.user;
   }
 }

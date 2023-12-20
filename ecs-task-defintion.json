@@ -1,4 +1,3 @@
-// ecs-task-defintion.json
 {
     "family": "address-book-task",
     "networkMode": "awsvpc",

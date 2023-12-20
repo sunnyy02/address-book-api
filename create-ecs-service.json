@@ -1,0 +1,30 @@
+{
+    "cluster": "address-book-cluster",
+    "serviceName": "address-book-service",
+    "taskDefinition": "[task definition arn]",
+    "launchType": "FARGATE",
+    "platformVersion": "1.4.0",
+    "schedulingStrategy": "REPLICA",
+    "networkConfiguration": {
+       "awsvpcConfiguration": {
+          "assignPublicIp": "ENABLED",
+          "securityGroups": [ "[security group id]" ],
+          "subnets": [ "[subnetid 1]","[subnetid 2]"]
+       }
+    },
+    "loadBalancers": [
+      {
+         "targetGroupArn": "[target group arn]",
+         "containerName": "address-book-container",
+         "containerPort": 3000
+      }
+    ],
+    "desiredCount": 2,
+    "healthCheckGracePeriodSeconds": 300,
+    "tags": [
+        {
+          "key": "Name",
+          "value": "address-book-service"
+        }
+    ]
+}

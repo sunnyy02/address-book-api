@@ -1,0 +1,24 @@
+// ecs-task-defintion.json
+{
+    "family": "address-book-task",
+    "networkMode": "awsvpc",
+    "cpu": "512",
+    "memory": "1024",
+    "requiresCompatibilities": ["FARGATE"],
+    "executionRoleArn": "<MyECSExecutionRole ARN>",
+    "containerDefinitions": [
+      {
+        "name": "address-book-container",
+        "image": "<account-id>.dkr.ecr.ap-southeast-2.amazonaws.com/address-book-api:latest", 
+        "cpu": 512,
+        "memory": 1024,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 3000,
+            "hostPort": 3000
+          }
+        ]
+      }
+    ]
+  }

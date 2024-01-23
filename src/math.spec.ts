@@ -1,6 +1,6 @@
 import { Math } from "./math";
 
-describe('Math', () => {
+describe('Math functions', () => {
   let math: Math;
 
   beforeEach(() => {

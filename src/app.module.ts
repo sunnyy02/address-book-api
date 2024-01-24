@@ -11,6 +11,10 @@ const configService = new ConfigService();
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: `.env.${process.env.NODE_ENV}`,
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: configService.get('DATABASE_HOST'),

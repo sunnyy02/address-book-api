@@ -3,12 +3,10 @@ import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from '../src/app.module';
 import { DBSeedingService } from '../src/common/db-seeding.service';
+import { TestData } from '../src/common/test-data';
 
 describe('UserController (e2e)', () => {
   let app: INestApplication;
-
-  const user1 = { id: 1, user_name: 'user1', email: 'user1@example.com' };
-  const user2 = { id: 2, user_name: 'user2', email: 'user2@example.com' };
   const newUser = {
     name: 'user3',
     email: 'user3@example.com',
@@ -18,7 +16,6 @@ describe('UserController (e2e)', () => {
     name: 'user1',
     email: 'user1update@example.com',
   };
-  const allUsers = [user1, user2];
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -39,14 +36,14 @@ describe('UserController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/user')
       .expect(200)
-      .expect(allUsers);
+      .expect(TestData.expected_allUsers);
   });
 
   it('/user/1 GET- retrieve user by id', () => {
     return request(app.getHttpServer())
       .get('/user/1')
       .expect(200)
-      .expect(user1);
+      .expect(TestData.expected_user1);
   });
 
   it('/user POST- create user)', async () => {
@@ -62,9 +59,9 @@ describe('UserController (e2e)', () => {
   it('/user POST- should return exceptions if user already exist', async () => {
     const res = await request(app.getHttpServer())
       .post('/user')
-      .send(user1)
+      .send(TestData.expected_user1)
       .expect(409); // 409 Conflict
-    
+
     expect(res.body.message).toBe('The email is already be used');
   });
 

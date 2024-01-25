@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UserEntity } from './entities/user.entity';
+import { TestData } from './test-data';
 
 @Injectable()
 export class DBSeedingService {
@@ -11,13 +12,10 @@ export class DBSeedingService {
   ) {}
 
   async seedUsers() {
-    const usersToSeed = [
-      {id: 1, user_name: 'user1', email: 'user1@example.com', password: 'password' },
-      {id: 2, user_name: 'user2', email: 'user2@example.com', password: 'password' },
-    ];
+
 
     await Promise.all(
-      usersToSeed.map((user) => this.userRepository.save(user)),
+      TestData.allUsers.map((user) => this.userRepository.save(user)),
     );
   }
 

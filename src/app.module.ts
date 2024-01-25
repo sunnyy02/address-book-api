@@ -13,7 +13,7 @@ const configService = new ConfigService();
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'coverage/lcov-report'),
+      rootPath: join(__dirname, '..', 'coverage-e2e/lcov-report'),
     }),
     ConfigModule.forRoot({
       isGlobal: true,

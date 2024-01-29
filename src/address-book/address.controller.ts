@@ -12,6 +12,11 @@ export class AddressController {
         return this.addressService.getById(id);
     }
 
+    @Get()
+    getAll() {
+      return this.addressService.getAll();
+    }
+
     @Post()
     create(@Body() address: CreateAddressDto) {
         return this.addressService.create(address);

@@ -17,6 +17,10 @@ export class AddressService {
   getById(id: number) {
     return this.addressDataStore.find((t) => t.id === id);
   }
+  
+  getAll() {
+    return this.addressDataStore;
+  }
 
   create(address: CreateAddressDto) {
     const id =

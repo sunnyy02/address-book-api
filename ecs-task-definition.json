@@ -8,7 +8,7 @@
     "containerDefinitions": [
       {
         "name": "address-book-container",
-        "image": "<image-url>", 
+        "image": "<Image-Repo-URL>", 
         "cpu": 512,
         "memory": 1024,
         "essential": true,

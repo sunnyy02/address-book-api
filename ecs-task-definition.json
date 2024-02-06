@@ -8,7 +8,7 @@
     "containerDefinitions": [
       {
         "name": "address-book-container",
-        "image": "<account-id>.dkr.ecr.ap-southeast-2.amazonaws.com/address-book-api:latest", 
+        "image": "<image-url>", 
         "cpu": 512,
         "memory": 1024,
         "essential": true,
